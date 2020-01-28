@@ -10,8 +10,7 @@
  */
 public class Film {
     private Integer id;
-    private String nomFilm;
-    private String descriptif;
+    private String nomFilm,descriptif;
 
     public Film(Integer id, String nomFilm, String descriptif) {
         this.id = id;

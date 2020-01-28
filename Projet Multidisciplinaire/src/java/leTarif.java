@@ -8,8 +8,6 @@
  *
  * @author kolomenek
  */
-public class Tarif {
-    private leTarif type;
-    private Integer prix;
-    
+public enum leTarif {
+    PLEIN,REDUIT;
 }

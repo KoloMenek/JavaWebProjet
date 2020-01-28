@@ -8,6 +8,7 @@
  *
  * @author kolomenek
  */
-public class Utilisateur {
-    
+public class Client {
+    private Integer idClient;
+    private String nom,prenom; 
 }

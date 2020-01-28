@@ -9,5 +9,27 @@
  * @author kolomenek
  */
 public class Salle {
+    private Integer idSalle,nbPlaces;
+
+    public Salle(Integer idSalle, Integer nbPlaces) {
+        this.idSalle = idSalle;
+        this.nbPlaces = nbPlaces;
+    }
+
+    public Integer getIdSalle() {
+        return idSalle;
+    }
+
+    public Integer getNbPlaces() {
+        return nbPlaces;
+    }
+
+    public void setNbPlaces(Integer nbPlaces) {
+        this.nbPlaces = nbPlaces;
+    }
+
+    public void setIdSalle(Integer idSalle) {
+        this.idSalle = idSalle;
+    }
     
 }
