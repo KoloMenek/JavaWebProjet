@@ -10,6 +10,4 @@
  */
 public enum PlaceType {
     LIBRE,RESERVE;
-    //xd
-    
 }
