@@ -8,8 +8,6 @@
  *
  * @author kolomenek
  */
-public class Tarif {
-    private TarifType type;
-    private Integer prix;
-    
+public enum PlaceType {
+    LIBRE,RESERVE;
 }

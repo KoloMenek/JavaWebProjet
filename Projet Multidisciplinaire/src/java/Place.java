@@ -10,9 +10,9 @@
  */
 public class Place {
     private Integer idPlace,alle,numeroPlace;
-    private laPlace statut;
+    private PlaceType statut;
 
-    public Place(Integer idPlace, Integer numeroPlace, Integer alle, laPlace statut) {
+    public Place(Integer idPlace, Integer numeroPlace, Integer alle, PlaceType statut) {
         this.idPlace = idPlace;
         this.numeroPlace = numeroPlace;
         this.alle = alle;
@@ -39,11 +39,11 @@ public class Place {
         this.idPlace = idPlace;
     }
 
-    public laPlace getStatut() {
+    public PlaceType getStatut() {
         return statut;
     }
 
-    public void setStatut(laPlace statut) {
+    public void setStatut(PlaceType statut) {
         this.statut = statut;
     }
 

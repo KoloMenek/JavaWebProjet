@@ -8,6 +8,6 @@
  *
  * @author kolomenek
  */
-public enum leTarif {
+public enum TarifType {
     PLEIN,REDUIT;
 }

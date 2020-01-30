@@ -8,6 +8,6 @@
  *
  * @author kolomenek
  */
-public enum laPlace {
-    LIBRE,RESERVE;
+public enum SeanceType {
+    FILM3D,FILM2D;
 }
