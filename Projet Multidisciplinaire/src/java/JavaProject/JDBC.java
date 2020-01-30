@@ -13,17 +13,36 @@ package JavaProject;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.sql.*;
 import javax.servlet.http.HttpServletRequest;
 
 public class JDBC {
+    
     /* La liste qui contiendra tous les résultats de nos essais */
     private List<String> messages = new ArrayList<String>();
 
     public List<String> executerTests( HttpServletRequest request ) {
         /* Ici, nous placerons le code de nos manipulations */
         /* ... */
+        Connection cnx = connecterBDD();
 
         return messages;
+    }
+    public static Connection connecterBDD(){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Ok");   
+            String url = "jdbc:mysql://localhost:3306/cinema";
+            String user = "root";
+            String password = "";
+            Connection cnx = DriverManager.getConnection(url, user, password);
+            System.out.println("Base de donnée ok owo");
+            return cnx;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+        
     }
 }

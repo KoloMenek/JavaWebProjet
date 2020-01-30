@@ -10,6 +10,6 @@ package JavaProject;
  *
  * @author kolomenek
  */
-public class Hsitorique {
+public class Historique {
     
 }
