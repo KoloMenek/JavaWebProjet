@@ -51,10 +51,9 @@ public class JDBC {
         try (Connection cnx = connecterBDD();){
         String SQL = "Select * from connexion WHERE pseudo = '"+ user + "' AND password = '"+ password +"')";
         try(Statement statement = cnx.createStatement(); ResultSet resultset = statement.executeQuery(SQL)){
-            statement.executeUpdate(SQL);
+            String id = resultset.getString(2);
+            return id;
+        }        
         }
-        
-        }
-        return null;
     }
 }

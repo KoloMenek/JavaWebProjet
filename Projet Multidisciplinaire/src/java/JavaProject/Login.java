@@ -18,13 +18,23 @@ import javax.servlet.http.HttpServletResponse;
  * @author Mickael
  */
 public class Login {
+    public static final String VUE = "/jdbc.jsp";
+    public static final String VUE2 = "/index.html";
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
                 JDBC bdd = new JDBC();
                 String user = request.getParameter("username");
                 String password = request.getParameter("password");
-                bdd.VerificationConnexion(user,password);
-                RequestDispatcher distri = request.getRequestDispatcher(VUE);
-                distri.forward(request, response);
+                String id = bdd.VerificationConnexion(user,password);
+               
+                if (id == user){
+                    RequestDispatcher distri = request.getRequestDispatcher(VUE);
+                    distri.forward(request, response);
+                }
+                else {
+                    RequestDispatcher distri = request.getRequestDispatcher(VUE);
+                    distri.forward(request, response);
+                }
+                    
     }
 }
