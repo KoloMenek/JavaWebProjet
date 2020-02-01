@@ -49,14 +49,9 @@ public class JDBC {
     
     public boolean VerificationConnexion(String user, String password) throws SQLException{
         try (Connection cnx = connecterBDD();){
-        String SQL = "Select * from connexion WHERE pseudo = '"+ user + "' AND password = '"+ password +"')";
+        String SQL = "Select * from connexion WHERE pseudo = '"+ user + "' AND password = '"+ password +"'";
         try(Statement statement = cnx.createStatement(); ResultSet resultset = statement.executeQuery(SQL)){
-            String id = resultset.getString(2);
-            if (!resultset.wasNull()){
-                return true;
-            }
-            else 
-                return false; 
+            return resultset.first() == true; 
         }        
         }
     }

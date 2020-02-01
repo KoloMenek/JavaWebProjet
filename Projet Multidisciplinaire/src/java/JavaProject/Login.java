@@ -5,11 +5,14 @@
  */
 package JavaProject;
 
-import static JavaProject.GestionJDBC.VUE;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,17 +20,25 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mickael
  */
-public class Login {
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
+public class Login extends HttpServlet {
+
     public static final String VUE = "/jdbc.jsp";
     public static final String VUE2 = "/index.html";
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+    
+    @Override
+        public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
                 JDBC bdd = new JDBC();
                 String user = request.getParameter("username");
                 String password = request.getParameter("password");
-                boolean id = bdd.VerificationConnexion(user,password);
-               
-                if (id == true){
+                boolean result = false;
+                try {
+                 result = bdd.VerificationConnexion(user,password);
+                 } catch (SQLException ex) {
+                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                }        
+                if (result == true){
                     RequestDispatcher distri = request.getRequestDispatcher(VUE);
                     distri.forward(request, response);
                 }
