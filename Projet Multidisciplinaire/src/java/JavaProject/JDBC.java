@@ -39,19 +39,17 @@ public class JDBC {
             String user = "root";
             String password = "";
             Connection cnx = DriverManager.getConnection(url, user, password);
-            System.out.println("Base de donnée ok owo");
             return cnx;
         }
-        catch(Exception e){
-            e.printStackTrace();
+        catch(ClassNotFoundException | SQLException e){
             return null;
         }
         
     }
     
-    public String VerificationConnexion() throws SQLException{
+    public String VerificationConnexion(String user, String password) throws SQLException{
         try (Connection cnx = connecterBDD();){
-        String SQL = "Select ";
+        String SQL = "Select * from WHERE pseudo '"+ user + "' AND '"+ password +"')";
         return null;
         }
         
