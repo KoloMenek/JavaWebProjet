@@ -25,14 +25,14 @@ public class Login {
                 JDBC bdd = new JDBC();
                 String user = request.getParameter("username");
                 String password = request.getParameter("password");
-                String id = bdd.VerificationConnexion(user,password);
+                boolean id = bdd.VerificationConnexion(user,password);
                
-                if (id == user){
+                if (id == true){
                     RequestDispatcher distri = request.getRequestDispatcher(VUE);
                     distri.forward(request, response);
                 }
                 else {
-                    RequestDispatcher distri = request.getRequestDispatcher(VUE);
+                    RequestDispatcher distri = request.getRequestDispatcher(VUE2);
                     distri.forward(request, response);
                 }
                     
