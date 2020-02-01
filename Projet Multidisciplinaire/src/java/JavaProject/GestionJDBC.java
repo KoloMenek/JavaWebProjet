@@ -13,6 +13,7 @@ package JavaProject;
 
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class GestionJDBC extends HttpServlet {
     public static final String ATT_MESSAGES = "messages";
-    public static final String VUE          = "/WEB-INF/test_jdbc.jsp";
+    public static final String VUE          = "/jdbc.jsp";
+    
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Initialisation de l'objet Java et récupération des messages */
@@ -34,5 +36,12 @@ public class GestionJDBC extends HttpServlet {
 
         /* Transmission vers la page en charge de l'affichage des résultats */
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
+    }
+    
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        JDBC bdd = new JDBC();
+        bdd.connecterBDD();
+        RequestDispatcher distri = request.getRequestDispatcher(VUE);
+        distri.forward(request, response);
     }
 }

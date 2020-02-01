@@ -17,7 +17,10 @@ import java.sql.*;
 import javax.servlet.http.HttpServletRequest;
 
 public class JDBC {
-    
+
+    public JDBC() {
+    }
+     
     /* La liste qui contiendra tous les résultats de nos essais */
     private List<String> messages = new ArrayList<String>();
 
@@ -28,7 +31,7 @@ public class JDBC {
 
         return messages;
     }
-    public static Connection connecterBDD(){
+    public Connection connecterBDD(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Ok");   
