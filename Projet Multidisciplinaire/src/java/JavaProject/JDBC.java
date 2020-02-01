@@ -48,4 +48,12 @@ public class JDBC {
         }
         
     }
+    
+    public String VerificationConnexion() throws SQLException{
+        try (Connection cnx = connecterBDD();){
+        String SQL = "Select ";
+        return null;
+        }
+        
+    }
 }
