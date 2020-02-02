@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * @author Mickael
  */
 @WebServlet("/Logout")
-public class Logout {
+public class Logout_servlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

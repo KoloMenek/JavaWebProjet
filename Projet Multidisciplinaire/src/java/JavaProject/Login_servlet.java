@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Mickael
  */
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+public class Login_servlet extends HttpServlet {
 
     public static final String VUE = "/jdbc.jsp";
     public static final String VUE2 = "/index.html";
@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
                 try {
                  result = bdd.VerificationConnexion(user,password);
                  } catch (SQLException ex) {
-                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
                 }        
                 if (result == true){
                     RequestDispatcher distri = request.getRequestDispatcher(VUE);
