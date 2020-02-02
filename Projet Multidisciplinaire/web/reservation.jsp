@@ -75,7 +75,7 @@
            for( int j=0; j<10; j++){
                
                %>
-               <input type="checkbox" name="choix[]">
+               <input type="checkbox" name="Choix" value = "<%out.println(i + "" + j);%>">
                <%
            }
           %>
