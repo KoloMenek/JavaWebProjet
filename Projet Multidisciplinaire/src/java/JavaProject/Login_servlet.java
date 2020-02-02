@@ -22,10 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login_servlet extends HttpServlet {
-
-    public static final String VUE = "/jdbc.jsp";
-    public static final String VUE2 = "/index.html";
-    
+    private String VUE = ""; 
     @Override
         public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,13 +36,13 @@ public class Login_servlet extends HttpServlet {
                  Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
                 }        
                 if (result == true){
-                    RequestDispatcher distri = request.getRequestDispatcher(VUE);
-                    distri.forward(request, response);
+                    VUE = "/jdbc.jsp";
                 }
                 else {
-                    RequestDispatcher distri = request.getRequestDispatcher(VUE2);
-                    distri.forward(request, response);
+                    VUE = "/index.html";
                 }
+                RequestDispatcher distri = request.getRequestDispatcher(VUE);
+                distri.forward(request, response);
                     
     }
 }
