@@ -31,7 +31,7 @@
           <li><a href="#">Déja passé dans votre cinéma</a></li>
         </ul>
         <li class="menu_reservation">
-          <a href="reservation.html">Réserver ma place</a>
+          <a href="reservation.jsp">Réserver ma place</a>
         </li>
         <ul class="sousmenu">
           <li><a href="#">Réserver ma place</a></li>
