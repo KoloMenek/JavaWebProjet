@@ -1,0 +1,86 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2 févr. 2020, 17:40:55
+    Author     : Mickael
+*/
+
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0px;
+  padding: 0px; 
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+nav{
+  width: 100%;
+  background-color: #424558;
+}
+
+nav > ul{
+  margin: 0px;
+  padding: 0px;
+}
+
+nav > ul::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav > ul > li{
+  float: left;
+  position: relative;
+}
+
+nav li{
+  list-style-type: none;
+}
+
+nav input[type=checkbox]{
+  display: none;
+}
+
+nav label{
+  display: none;
+}
+
+.sousmenu{
+  display: none;
+}
+
+nav a{
+  display: inline-block;
+  text-decoration: none;  
+}
+
+nav > ul > li > a{
+  padding: 20px 30px;
+  color: #FFF;
+}
+
+nav li:hover .sousmenu{
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  padding: 0px;
+  z-index: 1000;
+}
+
+.sousmenu li a{
+  padding: 15px 30px;
+  font-size: 15px;
+  color: #222538;
+  width: 270px;
+}
+
