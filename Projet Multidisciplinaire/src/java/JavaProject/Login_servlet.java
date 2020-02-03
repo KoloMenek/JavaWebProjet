@@ -31,7 +31,7 @@ public class Login_servlet extends HttpServlet {
                 String password = request.getParameter("password");
                 boolean result = false;
                 try {
-                 result = bdd.VerificationConnexion(user,password);
+                 result = bdd.verificationConnexion(user,password);
                  } catch (SQLException ex) {
                  Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
                 }        
