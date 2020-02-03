@@ -23,7 +23,7 @@
       <input type="checkbox" id="menu-mobile" role="button" />
       <ul id ="flex">
         <li class="menu_accueil"><a href="accueil.html">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="listeFilm.html">Films</a>
+        <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a>
           <ul class="sousmenu">
             <li><a href="#">A l"affiche</a></li>
             <li><a href="#">A venir</a></li>
@@ -51,7 +51,7 @@
 <input name="diapo" id="pause2" type="radio" class="pause_diapo">
 <input name="diapo" id="pause3" type="radio" class="pause_diapo">
 <ul>
-<li><img src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/lt5wv-EA0T01WGJZS-Full-Image_GalleryBackground-en-US-1569605445397._SX1080_.jpg" alt></li>
+<li style="width:900px;"><img src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/lt5wv-EA0T01WGJZS-Full-Image_GalleryBackground-en-US-1569605445397._SX1080_.jpg" alt></li>
 <li class="image1 slide_diapo"><img src="https://images.wallpapersden.com/image/download/star-wars-9-poster_67281_1920x1080.jpg" alt></li>
 <li class="image2 slide_diapo"><img src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/lt5wv-EA0T01WGJZS-Full-Image_GalleryBackground-en-US-1569605445397._SX1080_.jpg" alt></li>
 <li class="image3 slide_diapo"><img src="https://geeko.lesoir.be/wp-content/uploads/sites/58/2019/12/avengers-endgame-poster-og-social-crop-e1554810427804.jpg" alt></li>
