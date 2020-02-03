@@ -49,8 +49,13 @@ public class JDBC {
         try (Connection cnx = connecterBDD();){
             String SQL = "INSERT INTO compte_client('pseudo','password','mail') "
                        + "VALUES ('" + user + "','" + pswd + "', '" + email + "')";
-            try(Statement statement = cnx.createStatement(); ResultSet resultset = statement.executeQuery(SQL);){
-                leReturn = "Votre compte a été crée avec succés";
+            try(Statement statement = cnx.createStatement();){
+                try {
+                    statement.executeUpdate(SQL);
+                    leReturn = "Votre compte a été crée avec succés";
+                }catch(Exception e){
+                    System.err.println("Exception ajout compte"); 
+                }
             }
         }
         return leReturn;
