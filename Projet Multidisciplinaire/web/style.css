@@ -7,13 +7,16 @@ and open the template in the editor.
     Created on : 2 févr. 2020, 17:40:55
     Author     : Mickael
 */
-
 /* CSS files add styling rules to your content */
 
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 0px;
-  padding: 0px; 
+  padding: 0px;
+  background-color : #323232;
+  background-image: url('https://www.cnc.fr/documents/36995/98172/Cin%C3%A9ma+les+7+Batignolles+Salle+Sphera+-+Cr%C3%A9dit+Cin%C3%A9-Movida+-+DR.jpg/77462be2-c158-7e2b-395a-51afcf0ae33a?t=1545326420451&thumb=cncThumbImagePrincipale');
+  background-repeat:no-repeat;
+  background-size: cover;
 }
 
 h1 {
@@ -22,13 +25,19 @@ h1 {
 }
 
 nav{
+  padding-left:50px;
   width: 100%;
-  background-color: #424558;
+  background-color : #323232;
 }
 
 nav > ul{
   margin: 0px;
   padding: 0px;
+}
+
+ul{
+  display:flex;
+  justify-content:space-around;
 }
 
 nav > ul::after{
@@ -67,13 +76,14 @@ nav > ul > li > a{
   padding: 20px 30px;
   color: #FFF;
 }
+
 nav li:hover .sousmenu{
   display: inline-block;
   position: absolute;
   top: 100%;
   left: 0px;
   padding: 0px;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .sousmenu li a{
@@ -83,3 +93,544 @@ nav li:hover .sousmenu{
   width: 270px;
 }
 
+.menu_accueil:hover{
+  border-top: 5px solid #FFF ;
+  background-color: RGBa(255,255,255,0.45);
+}
+
+.menu_reservation:hover{
+  border-top: 5px solid #FFF ;
+  background-color: RGBa(255,255,255,0.45);
+}
+
+.menu_listeFilm:hover{
+  border-top: 5px solid #FFF ;
+  background-color: RGBa(255,255,255,0.45);
+}
+
+.menu_contact:hover{
+  border-top: 5px solid #FFF ;
+  background-color: RGBa(255,255,255,0.45);
+}
+
+nav > ul > li:hover a{
+  padding: 15px 30px 20px 30px;
+}
+
+.sousmenu li{
+  border-bottom: 1px solid #CCC;
+}
+
+.menu_reservation .sousmenu{
+  background-color: RGB(220,220,220);
+}
+
+.menu_listeFilm .sousmenu{
+  background-color: RGB(220,220,220);
+}
+
+.menu_contact .sousmenu{
+  background-color: RGB(220,220,220);
+}
+
+.montableau{
+  width:60%;
+  margin: 50px;
+}
+
+.sousmenu li:hover{
+  color: #EEE;
+  font-weight: bold;
+}
+
+.menu_reservation .sousmenu li:hover{
+  background-color: RGB(210,210,210);
+}
+
+.menu_listeFilm .sousmenu li:hover{
+  background-color: RGB(210,210,210);
+}
+
+.menu_contact .sousmenu li:hover{
+  background-color: RGB(210,210,210);
+}
+
+nav input[type=checkbox]:checked ~ ul{
+  display: block;
+}
+
+@media screen and (max-width: 800px){
+  .menu-mobile{
+    display: block;
+    color: #FFF;
+    background-color: RGB(0,0,0);
+    text-align: center;
+    padding: 15px 0px;
+  }
+  nav ul{
+    display: none;
+  }
+  nav ul li, nav ul li a{
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li a, nav ul li:hover a{
+    padding: 10px 0px;
+  }
+  nav li:hover .sousmenu{
+    display: block;
+    position: static;
+  }
+}
+
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #660000;
+    background: #cc0000;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+h3{
+  font-style: bold;
+  color: #FFF;
+  margin: 0px;
+  padding-top: 5px;
+  font-size: 15px;
+}
+#container h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #53af57;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+}
+
+h4{
+  color: #FFF;
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 30px;
+  font-style: bold;
+  text-align: center;
+}
+
+#logo{
+  width: 170px;
+  height: 170px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#creer{
+  align-items:center;
+  font-family:"Courier New", Courier, monospace;
+  margin : auto;
+}
+/* mouse over link */
+p > a{
+  color: white;
+}
+/* mouse over link */
+p > a:hover {
+  color: green;
+}
+
+
+
+/*DIAPORAMA FILMS*/
+img{
+
+max-width:100%
+
+}
+
+.diapo_auto_rwd{
+padding-top:50px;
+position:relative;
+max-width:900px;
+margin:2rem auto;
+overflow:hidden
+
+}
+
+.diapo_auto_rwd input[type=radio]{
+
+position: absolute;
+left: -9999px
+
+}
+
+.diapo_auto_rwd label{
+
+cursor:pointer
+
+}
+
+.diapo_auto_rwd ul {
+
+position: relative;
+z-index: 1;
+margin: 0;
+padding: 0;
+list-style-type: none;
+overflow: hidden
+
+}
+
+.diapo_auto_rwd ul .slide_diapo {
+
+height: 100%;
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;
+transition: transform .8s
+
+}
+
+
+/*slide images, on place les photos cote a cote*/
+
+ul .slide_diapo.image1{
+
+left: 0
+
+}
+
+ul .slide_diapo.image2{
+
+left: 100%
+
+}
+
+ul .slide_diapo.image3{
+
+left: 200%
+
+}
+
+#slide1:checked ~ ul .slide_diapo,
+#pause1:checked ~ ul .slide_diapo {
+
+transform: translatex(0)
+
+}
+
+#slide2:checked ~ ul .slide_diapo,
+#pause2:checked ~ ul .slide_diapo {
+
+transform: translatex(-100%)
+
+}
+
+#slide3:checked ~ ul .slide_diapo,
+#pause3:checked ~ ul .slide_diapo{
+
+transform: translatex(-200%)
+
+}
+
+
+/*defilement automatique des photos lorsqu'on clique sur le bouton play*/
+#lance-diapo:checked ~ ul .slide_diapo {
+
+animation: slide-diapo 12.3s infinite
+
+}
+
+/*animation css3 defilement automatique des photos*/
+@keyframes slide-diapo {
+
+0%,25%{
+
+margin-left: 0
+
+}
+
+33%,58%{
+
+margin-left: -100%
+
+}
+
+66%,91%{
+
+margin-left: -200%
+
+}
+
+}
+
+
+
+.diapo_auto_rwd img,
+.precedent,
+.suivant,
+.lancement_arret {
+
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none /*empêche de selctionner les images et icones*/
+
+}
+
+
+/*navigation fleches droite et gauche*/
+.precedent,
+.suivant {
+
+position: absolute;
+top: 50%;
+z-index: 1
+
+}
+
+.precedent label,
+.suivant label {
+
+position: absolute;
+opacity: 0;
+z-index: -1;
+height: 50px;
+width: 0;
+transform: translate(0,-50%);
+
+}
+
+.precedent {
+
+left: 0
+
+}
+
+.suivant {
+
+right:50px
+
+}
+
+.precedent label:before{
+font-size:50px;
+font-weight: bold;
+content:"<"
+
+}
+
+.suivant label:before{
+font-size:50px;
+content:">"
+
+}
+
+.precedent label:before,
+.suivant label:before{
+
+position: absolute;
+font-family: "bric-a-brac";
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50px;
+background: hsla(0,0%,0%,.3);
+transition: background .3s;
+color: white
+
+}
+
+.precedent:hover label:before,
+.suivant:hover label:before{
+
+background: hsla(0,0%,0%,.8)
+
+}
+
+
+#slide1:checked ~ .precedent .image3,
+#pause1:checked ~ .precedent .image3,
+#slide1:checked ~ .suivant .image2,
+#pause1:checked ~ .suivant .image2,
+#slide2:checked ~ .precedent .image1,
+#pause2:checked ~ .precedent .image1,
+#slide2:checked ~ .suivant .image3,
+#pause2:checked ~ .suivant .image3,
+#slide3:checked ~ .precedent .image2,
+#pause3:checked ~ .precedent .image2,
+#slide3:checked ~ .suivant .image1,
+#pause3:checked ~ .suivant .image1 {
+
+opacity: 1;
+z-index: 1
+
+}
+
+@keyframes fleche_diapo {
+
+0%,33.33%{
+
+opacity: 1;
+z-index: 0
+
+}
+
+33.34%,100%{
+
+opacity: 0;
+z-index: -1
+
+}
+
+}
+
+
+#lance-diapo:checked ~ .precedent .image3,
+#lance-diapo:checked ~ .suivant .image2 {
+
+animation: fleche_diapo 12.3s infinite -1s
+
+}
+
+#lance-diapo:checked ~ .precedent .image1,
+#lance-diapo:checked ~ .suivant .image3 {
+
+animation: fleche_diapo 12.3s infinite 3.1s
+
+}
+
+
+#lance-diapo:checked ~ .precedent .image2,
+#lance-diapo:checked ~ .suivant .image1 {
+
+animation: fleche_diapo 12.3s infinite 7.2s
+
+}
+
+
+/*Play-Pause*/
+.lancement_arret,
+.lancement_arret label{
+
+position: absolute
+
+}
+
+.lancement_arret {
+
+top: 50%;
+left: 50%;
+z-index: 2
+
+}
+
+.lancement_arret label {
+
+transform: translate(-50%,-50%)
+}
+
+.lancement_arret label:after{
+
+display: flex;
+align-items: center;
+justify-content: center;
+padding: .5rem;
+transition: background .3s;
+font-family: "bric-a-brac";
+color: #fff
+
+}
+
+.lancement_arret:hover label:after{
+
+background: hsla(0,0%,0%,.6)
+
+}
+
+
+#lance-diapo:checked ~ .lancement_arret .pause_diapo,
+.slide_diapo:checked ~ .lancement_arret .lance_diapo,
+.pause_diapo:checked ~ .lancement_arret .lance_diapo {
+
+display: flex;
+z-index: 2
+
+}
+
+#lance-diapo:checked ~ .lancement_arret .lance_diapo,
+.slide_diapo:checked ~ .lancement_arret .pause_diapo,
+.pause_diapo:checked ~ .lancement_arret .pause_diapo {
+
+display: none;
+z-index: -1
+
+}
+
+#lance-diapo:checked ~ .lancement_arret .pause_diapo.image1,
+#lance-diapo:checked ~ .lancement_arret .pause_diapo.image2,
+#lance-diapo:checked ~ .lancement_arret .pause_diapo.image3{
+
+opacity: 0;
+z-index: -1
+
+}
+
+
+
+#lance-diapo:checked ~ .lancement_arret .pause_diapo.image1 {
+
+animation: fleche_diapo 12.3s infinite -1s
+
+}
+
+#lance-diapo:checked ~ .lancement_arret .pause_diapo.image2 {
+
+animation: fleche_diapo 12.3s infinite 3.1s
+
+}
+
+#lance-diapo:checked ~ .lancement_arret .pause_diapo.image3 {
+
+animation: fleche_diapo 12.3s infinite 7.2s
+
+}
+
+
+#lance-diapo:checked ~ ul .slide_diapo,
+.pause_diapo:checked ~ ul .slide_diapo,
+.pause_diapo:checked ~ .precedent label,
+.pause_diapo:checked ~ .suivant label,
+.slide_diapo:checked ~ .precedent label,
+.slide_diapo:checked ~ .suivant label{
+transition:none
+}/*on revient directement a la premiere photo sans effet de slide*/

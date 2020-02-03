@@ -9,40 +9,69 @@
   <head>
     <title>Hello!</title>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!-- import the webpage"s stylesheet -->
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- import the webpage's javascript file -->
+    <!-- import the webpage"s javascript file -->
     <script src="/script.js" defer></script>
   </head>
   <body>
     <nav>
       <label for="menu-mobile" class="menu-mobile">Menu</label>
-      <input type="checkbox" id="menu-mobile" role="button">
-      <ul>
+      <input type="checkbox" id="menu-mobile" role="button" />
+      <ul id ="flex">
         <li class="menu_accueil"><a href="accueil.html">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="listeFilm.html">Films</a></li>
-        <ul class="sousmenu">
-          <li><a href="#">A l'affiche</a></li>  
-          <li><a href="#">A venir</a></li>
-          <li><a href="#">Déja passé dans votre cinéma</a></li>
-        </ul>
-        <li class="menu_reservation">
-          <a href="reservation.jsp">Réserver ma place</a>
+        <li class="menu_listeFilm"><a href="listeFilm.html">Films</a>
+          <ul class="sousmenu">
+            <li><a href="#">A l"affiche</a></li>
+            <li><a href="#">A venir</a></li>
+            <li><a href="#">Déja passé dans votre cinéma</a></li>
+          </ul>
         </li>
-        <ul class="sousmenu">
-          <li><a href="#">Réserver ma place</a></li>
-          <li><a href="#">Nos tarifs</a></li>
-        </ul>
-        <li class="menu_contact"><a href="contact.html">Contact</a></li>
-        <ul class="sousmenu">
-          <li><a href="#">Nous trouver</a></li>
-          <li><a href="#">Nous contacter</a></li>
-        </ul>
+        <li class="menu_contact"><a href="contact.html">Contact</a>
+          <ul class="sousmenu">
+            <li><a href="#">Nous trouver</a></li>
+            <li><a href="#">Nous contacter</a></li>
+          </ul>
+        </li>
+          <li class="menu_contact"><a href="contact.html">Admin</a>
+        </li>
+          <li class="menu_contact"><a href="connexion.html">Connexion</a>
+        </li>
       </ul>
     </nav>
+<div class="diapo_auto_rwd">
+<input name="diapo" id="slide1" type="radio" class="slide_diapo">
+<input name="diapo" id="slide2" type="radio" class="slide_diapo">
+<input name="diapo" id="slide3" type="radio" class="slide_diapo">
+<input name="diapo" id="lance-diapo" type="radio" checked>
+<input name="diapo" id="pause1" type="radio" class="pause_diapo">
+<input name="diapo" id="pause2" type="radio" class="pause_diapo">
+<input name="diapo" id="pause3" type="radio" class="pause_diapo">
+<ul>
+<li><img src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/lt5wv-EA0T01WGJZS-Full-Image_GalleryBackground-en-US-1569605445397._SX1080_.jpg" alt></li>
+<li class="image1 slide_diapo"><img src="https://images.wallpapersden.com/image/download/star-wars-9-poster_67281_1920x1080.jpg" alt></li>
+<li class="image2 slide_diapo"><img src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/lt5wv-EA0T01WGJZS-Full-Image_GalleryBackground-en-US-1569605445397._SX1080_.jpg" alt></li>
+<li class="image3 slide_diapo"><img src="https://geeko.lesoir.be/wp-content/uploads/sites/58/2019/12/avengers-endgame-poster-og-social-crop-e1554810427804.jpg" alt></li>
+</ul>
+<div class="lancement_arret">
+<label class="lance_diapo" for="lance-diapo"></label>
+<label class="pause_diapo image1" for="pause1"></label>
+<label class="pause_diapo image2" for="pause2"></label>
+<label class="pause_diapo image3" for="pause3"></label>
+</div>
+<div class="precedent">
+<label class="image1" for="slide1"></label>
+<label class="image2" for="slide2"></label>
+<label class="image3" for="slide3"></label>
+</div>
+<div class="suivant">
+<label class="image1" for="slide1"></label>
+<label class="image2" for="slide2"></label>
+<label class="image3" for="slide3"></label>
+</div>
+    </div>
   </body>
 </html>

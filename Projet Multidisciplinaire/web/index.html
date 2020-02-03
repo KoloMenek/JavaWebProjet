@@ -4,23 +4,53 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
-    <head>
-        <title>Identification</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        
-        <div><h1 style="text-align:center;">Page d'authentification</h1></div>
-        <form method="post" action="Login"><center>
-            <br><label><b>Nom d'utilisateur : </b></label><br>
-            <br><input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required><br>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <br><label><b>Mot de passe : </b></label><br>
-            <br><input type="password" placeholder="Entrer le mot de passe" name="password" required><br>
-            
-            <br><button name="button" type='submit'>Connexion</button><br>
-        </center></form>
-    </body>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <label for="menu-mobile" class="menu-mobile">Menu</label>
+      <input type="checkbox" id="menu-mobile" role="button" />
+      <ul>
+        <li class="menu_accueil"><a href="accueil.html">Accueil</a></li>
+        <li class="menu_listeFilm"><a href="listeFilm.html">Films</a>
+          <ul class="sousmenu">
+            <li><a href="#">A l'affiche</a></li>
+            <li><a href="#">A venir</a></li>
+            <li><a href="#">Déja passé dans votre cinéma</a></li>
+          </ul>
+        </li>
+        <li class="menu_contact"><a href="contact.html">Contact</a>
+          <ul class="sousmenu">
+            <li><a href="#">Nous trouver</a></li>
+            <li><a href="#">Nous contacter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="container">    
+      <form method = "POST" action="Login">
+        <h4>Connexion</h4>
+        <img  id="logo" src="https://cdn.discordapp.com/attachments/671725600104513539/673807332807016449/cinema-logo_23-2147503279.jpg">
+        <label><h3>Nom d'utilisateur</h3></label>
+        <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+        <label><h3>Mot de passe</h3></label>
+        <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+        <input type="submit" id="submit" value="LOGIN">
+        <br>
+        <p class = "creer"><a href="#">Créer un compte</a></p>
+      </form>
+    </div>
+  </body>
 </html>
+
