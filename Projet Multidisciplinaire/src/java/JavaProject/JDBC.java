@@ -47,7 +47,7 @@ public class JDBC {
     public String creationCompte(String user, String pswd, String email) throws SQLException{
         String leReturn = "Erreur Création compte";
         try (Connection cnx = connecterBDD();){
-            String SQL = "INSERT INTO compte_client('pseudo','password','mail') "
+            String SQL = "INSERT INTO compte_client(pseudo,password,mail) "
                        + "VALUES ('" + user + "','" + pswd + "', '" + email + "')";
             try(Statement statement = cnx.createStatement();){
                 try {
