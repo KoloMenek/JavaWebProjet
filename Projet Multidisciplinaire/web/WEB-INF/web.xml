@@ -8,6 +8,10 @@
         <servlet-name>CreationCompte</servlet-name>
         <servlet-class>JavaProject.CreationCompte</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionListe_FilmServlet</servlet-name>
+        <servlet-class>JavaProject.GestionListe_FilmServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GestionJDBC</servlet-name>
         <url-pattern>/GestionJDBC</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>CreationCompte</servlet-name>
         <url-pattern>/CreationCompte</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionListe_FilmServlet</servlet-name>
+        <url-pattern>/GestionListe_FilmServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -12,12 +12,28 @@ package JavaProject;
  */
 public class Film {
     private Integer id;
-    private String nomFilm,descriptif;
+    private String nomFilm,descriptif, image;
 
-    public Film(Integer id, String nomFilm, String descriptif) {
+    public Film() {
+    }
+
+    public Film(Integer id, String nomFilm, String descriptif, String image) {
         this.id = id;
         this.nomFilm = nomFilm;
         this.descriptif = descriptif;
+        this.image = image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public String getDescriptif() {
