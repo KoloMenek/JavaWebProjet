@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
@@ -26,8 +26,8 @@
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
         <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
-        <li class="menu_reservation"><a href="reservation.jsp"></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
+        <li class="menu_contact"><a href="index.html">Connexion</a></li>
       </ul>
     </nav>
     <center>
