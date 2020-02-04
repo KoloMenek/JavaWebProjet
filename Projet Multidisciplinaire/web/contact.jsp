@@ -25,7 +25,7 @@
       <input type="checkbox" id="menu-mobile" role="button">
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
+        <li class="menu_listeFilm"><a href="GestionListe_FilmServlet">Films</a></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
                 
         <% 
@@ -37,7 +37,7 @@
                                           src="https://res.cloudinary.com/techsnips/image/fetch/w_2000,f_auto,q_auto,c_fit/https://adamtheautomator.com/content/images/size/w2000/2019/10/user-1633249_1280.png" 
                                           alt> <a href="Logout"><span style="margin-left:15%;">Déconnexion</a></span></li> <%
         } else { %>
-        <li class="menu_contact"><a href="index.html">Connexion</a></li><% } %>   
+        <li class="menu_contact"><a href="Connexion.jsp">Connexion</a></li><% } %>   
       </ul>
     </nav>
     <center>

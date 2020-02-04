@@ -30,7 +30,7 @@
       <input type="checkbox" id="menu-mobile" role="button">
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
+        <li class="menu_listeFilm"><a href="GestionListe_FilmServlet">Films</a></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
                 
         <% 
@@ -59,15 +59,15 @@
                   desc = lesFilms.get(i).getDescriptif();
           %>
         <tr>
-          <td height="150px" width="35%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
-          <td height="115px" width="75%" style="color:white;"><%out.println(nom + "<br>");
+            <td height="150px" width="35%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
+          <td height="115px" width="75%" style="color:white;"><span style ="font-weight:bold; font-size: 20px;"> <% out.println(nom + "<br><br>");%></span><%
               out.println(desc); %></td>
         </tr>
         <tr>
           <td height="35px" width="75%" style="color:white;">Séance :
-              <a href="something" class="button4" style="background-color:#f14e4e">19:30</a>
-              <a href="something" class="button4" style="background-color:#f14e4e">21:30</a>
-              <a href="something" class="button4" style="background-color:#f14e4e">22:15</a>
+              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e">19:30</a>
+              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e">21:30</a>
+              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e">22:15</a>
           </td>
         </tr>
         <%

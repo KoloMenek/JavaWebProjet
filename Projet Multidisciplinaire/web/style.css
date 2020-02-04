@@ -324,6 +324,11 @@ p > a{
 p > a:hover {
   color: green;
 }
+#text1{
+    color:white;
+    font-weight: bold;
+    padding:100px;
+}
 
 
 
