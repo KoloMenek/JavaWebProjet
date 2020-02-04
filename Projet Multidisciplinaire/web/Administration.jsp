@@ -42,7 +42,7 @@
 
             <div id=Animation2>
                 <div class="centrage1">
-                    <a href="emprunt.php">
+                    <a href="Programmation.jsp">
                         <img id="CentrageImg" src="Image/Programmation.jpg" alt="">
                         <div id = "Centrage">
                             Programmation films
@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div  class="centrage1">
-                    <a href="DemandeLivre.php">
+                    <a href="Recette.jsp">
                         <img id="CentrageImg" src="Image/recette.jpg" alt="">
                         <div id = "Centrage">
                             Recette par film
@@ -58,7 +58,7 @@
                     </a>
                 </div>
                 <div  class="centrage1">
-                    <a href="Account.php">
+                    <a href="Historique.jsp">
                         <img id="CentrageImg" src="Image/historique.jpg" alt="">
                         <div  id="Centrage">
                            Historique réservation
