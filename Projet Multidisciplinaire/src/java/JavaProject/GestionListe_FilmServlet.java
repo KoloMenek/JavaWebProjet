@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +28,9 @@ public class GestionListe_FilmServlet extends HttpServlet {
     JDBC bdd = new JDBC();
     int nbFilms = 0;
     HashMap<Integer, Film> lesFilms = new HashMap<>();
+    HashMap<Integer,ArrayList<Seance>> lesSeancesVendredi = new HashMap<>();
+    HashMap<Integer,ArrayList<Seance>> lesSeancesSamedi = new HashMap<>();
+    HashMap<Integer,ArrayList<Seance>> lesSeancesDimanche = new HashMap<>();
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
@@ -37,12 +41,20 @@ public class GestionListe_FilmServlet extends HttpServlet {
         
         for(int i = 1; i<nbFilms + 1;i++){
             try {
+                
                 lesFilms.put(i,bdd.getElementsFromFilm(i));
+                lesSeancesVendredi.put(i,bdd.getSeancesForFilm(i,5));
+                lesSeancesSamedi.put(i, bdd.getSeancesForFilm(i,6));
+                lesSeancesDimanche.put(i, bdd.getSeancesForFilm(i,7));
+                
             } catch (SQLException ex) {
                 Logger.getLogger(GestionListe_FilmServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         }
-        
+        request.setAttribute("seancesVendredi", lesSeancesVendredi);
+        request.setAttribute("seancesSamedi", lesSeancesSamedi);
+        request.setAttribute("seancesDimanche", lesSeancesDimanche);
         request.setAttribute("lesFilms", lesFilms);
         request.setAttribute("nbFilms", nbFilms);
         RequestDispatcher distri = request.getRequestDispatcher(URL);

@@ -17,7 +17,7 @@ and open the template in the editor.
       <input type="checkbox" id="menu-mobile" role="button">
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="GestionListe_FilmServlet">Films</a></li>
+        <li class="menu_listeFilm"><a href="<%=request.getContextPath()%>/GestionListe_FilmServlet">Films</a></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
         <li class="menu_contact"><a href="Connexion.jsp">Connexion</a></li>
       </ul>

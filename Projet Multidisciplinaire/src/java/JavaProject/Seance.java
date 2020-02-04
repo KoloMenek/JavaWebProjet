@@ -2,6 +2,7 @@ package JavaProject;
 
 
 import JavaProject.SeanceType;
+import java.sql.Time;
 import java.util.Date;
 
 /*
@@ -15,53 +16,60 @@ import java.util.Date;
  * @author kolomenek
  */
 public class Seance {
-    private Salle saleUtilise;
-    private Film leFilm;
-    private Seance laSeance;
-    private SeanceType type;
-    private Date laDate;
+    private int saleUtilise;
+    private int leFilm;
+    private String type;
+    private int laDate;
+    private Time horaire;
+    private String langue;
 
-    public Seance(Salle saleUtilise, Film leFilm, Seance laSeance, SeanceType type, Date laDate) {
-        this.saleUtilise = saleUtilise;
-        this.leFilm = leFilm;
-        this.laSeance = laSeance;
-        this.type = type;
-        this.laDate = laDate;
+    public Seance() {
     }
 
-    public Date getLaDate() {
+    public Seance(int saleUtilise, int leFilm, String type, int laDate, Time horaire, String langue) {
+        this.saleUtilise = saleUtilise;
+        this.leFilm = leFilm;
+        this.type = type;
+        this.laDate = laDate;
+        this.horaire = horaire;
+        this.langue = langue;
+    }
+
+    public Time getHoraire() {
+        return horaire;
+    }
+
+     
+
+    public int getLaDate() {
         return laDate;
     }
 
-    public Seance getLaSeance() {
-        return laSeance;
-    }
+ 
 
-    public Film getLeFilm() {
+    public int getLeFilm() {
         return leFilm;
     }
 
-    public Salle getSaleUtilise() {
+    public int getSaleUtilise() {
         return saleUtilise;
     }
 
-    public void setLaDate(Date laDate) {
+    public void setLaDate(int laDate) {
         this.laDate = laDate;
     }
 
-    public void setLaSeance(Seance laSeance) {
-        this.laSeance = laSeance;
-    }
 
-    public void setLeFilm(Film leFilm) {
+
+    public void setLeFilm(int leFilm) {
         this.leFilm = leFilm;
     }
 
-    public void setSaleUtilise(Salle saleUtilise) {
+    public void setSaleUtilise(int saleUtilise) {
         this.saleUtilise = saleUtilise;
     }
 
-    public void setType(SeanceType type) {
+    public void setType(String type) {
         this.type = type;
     }
     

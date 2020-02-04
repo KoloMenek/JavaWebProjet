@@ -121,4 +121,18 @@ public class JDBC {
         }
         return leFilm;
     }
+    public ArrayList getSeancesForFilm(int idFilm, int jour) throws SQLException{
+        ArrayList<Seance> lesSeances = new ArrayList<>();
+        try(Connection cnx = connecterBDD();){
+            String SQL = "SELECT horaire, type, langue, idSalle FROM seance_cinema WHERE idFilm = '" + idFilm + "' AND jour = '" + jour + "';";
+            try(Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
+                while(rs.next()){
+                    lesSeances.add(new Seance(rs.getInt("idSalle"),idFilm,rs.getString("type"),jour,rs.getTime("horaire"),rs.getString("langue")));
+                }
+
+            }
+        }
+
+        return lesSeances;
+    }
 }

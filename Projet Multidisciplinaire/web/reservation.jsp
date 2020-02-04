@@ -25,7 +25,7 @@
       <input type="checkbox" id="menu-mobile" role="button">
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="GestionListe_FilmServlet">Films</a></li>
+        <li class="menu_listeFilm"><a href="<%=request.getContextPath()%>/GestionListe_FilmServlet">Films</a></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>                
         <% 
         String groupe = (String) session.getAttribute( "groupe" );
@@ -39,17 +39,9 @@
         <li class="menu_contact"><a href="index.html">Connexion</a></li><% } %>   
       </ul>
     </nav>
-    <h1>Les formulaires HTML</h1>
-        
-    <form method="post" action="traitement.php">
-      <label for="pseudo">Entrez un pseudo : </label>
-      <input type="text" name="prenom" id="prenom"><br><br>    
-      <label for="presentation">Présentation : </label>
-      <input type="text" name="pseudo" id="pseudo"><br><br> 
-      <input type="submit" value="Envoyer">
-    </form>
-    
-    <form method="POST" action="checkbox3.php">
+    <h1>Choisissez vos places</h1>
+       
+    <table style="width: 65%; height: 65%; background-color: RGBa(206, 206, 206, 0.6); margin:auto;">
       <%
         for(int i =0; i<5; i++){
       %>
@@ -58,26 +50,17 @@
           for( int z=0; z<10; z++){
       %>
       <td>
-        <img src="https://cdn.discordapp.com/attachments/671725600104513539/673584727579689000/24627.png" />
-        
+      <center><img src="https://www.color-stickers.com/2625-thickbox_default/stickers-fauteuil-rouge-cinema.jpg" height="50px" width="50px"/><br>
+      <input type="checkbox" name="Choix" ></center>
       </td>
       <%
-          }
+        }
       %>
-      <br>
-      <%
-           for( int j=0; j<10; j++){
-               
-               %>
-               <input type="checkbox" name="Choix" value = "<%out.println(i + "" + j);%>">
-               <%
-           }
-          %>
-          <br>
+
           </tr>
       <%
         }
       %>
-    </form>;
+    </table>;
   </body>
 </html>
