@@ -4,11 +4,19 @@
     Author     : Mickael
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="JavaProject.Seance"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="JavaProject.Film"%>
 <%
     HashMap<Integer, Film> lesFilms = (HashMap)request.getAttribute("lesFilms");
     Integer nbFilms = (Integer)request.getAttribute("nbFilms");
+    HashMap<Integer, ArrayList<Seance>> lesSeancesVendredi = (HashMap)request.getAttribute("seancesVendredi");
+    HashMap<Integer, ArrayList<Seance>> lesSeancesSamedi = (HashMap)request.getAttribute("seancesSamedi");
+    HashMap<Integer, ArrayList<Seance>> lesSeancesDimanche = (HashMap)request.getAttribute("seancesDimanche");
+    
+    
+    
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,7 +38,7 @@
       <input type="checkbox" id="menu-mobile" role="button">
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="GestionListe_FilmServlet">Films</a></li>
+        <li class="menu_listeFilm"><a href="<%=request.getContextPath()%>/GestionListe_FilmServlet">Films</a></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
                 
         <% 
@@ -57,17 +65,40 @@
                   img = lesFilms.get(i).getImage();
                   nom = lesFilms.get(i).getNomFilm();
                   desc = lesFilms.get(i).getDescriptif();
+                  
           %>
         <tr>
-            <td height="150px" width="35%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
-          <td height="115px" width="75%" style="color:white;"><span style ="font-weight:bold; font-size: 20px;"> <% out.println(nom + "<br><br>");%></span><%
+          <td height="150px" width="35%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
+          <td height="115px" width="75%" style="color:white;"><%out.println("<b>" + nom + "</b><br><br>");
               out.println(desc); %></td>
         </tr>
         <tr>
-          <td height="35px" width="75%" style="color:white;">Séance :
-              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e">19:30</a>
-              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e">21:30</a>
-              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e">22:15</a>
+          <td height="35px" width="75%" style="color:white;">Séance Vendredi :
+              <%
+                  for(int j = 0; j < lesSeancesVendredi.get(i).size() ;j++){
+              %>
+              <a href="something" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesVendredi.get(i).get(j).getHoraire().toString()); %></a>
+              <%
+                  }
+              %>
+          </td>
+          <td height="35px" width="75%" style="color:white;">Séance Samedi :
+              <%
+                  for(int j = 0; j < lesSeancesSamedi.get(i).size() ;j++){
+              %>
+              <a href="something" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesSamedi.get(i).get(j).getHoraire().toString()); %></a>
+              <%
+                  }
+              %>
+          </td>
+          <td height="35px" width="75%" style="color:white;">Séance Dimanche :
+              <%
+                  for(int j = 0; j < lesSeancesDimanche.get(i).size() ;j++){
+              %>
+              <a href="something" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesDimanche.get(i).get(j).getHoraire().toString()); %></a>
+              <%
+                  }
+              %>
           </td>
         </tr>
         <%
