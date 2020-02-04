@@ -8,12 +8,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Formulaire de contact</title>
+    <title>Liste film</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- import the webpage's stylesheet -->
+    <!-- import t   he webpage's stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
     <!-- import the webpage's javascript file -->
@@ -25,18 +25,18 @@
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
         <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
-        <li class="menu_reservation"><a href="reservation.jsp"></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
+        <li class="menu_contact"><a href="index.html">Connexion</a></li>
       </ul>
     </nav>
-  <body>
+ <body>
     <p>
       <h1 style="text-align: center">Liste des films</h1>
     </p>
     <center>
       <table border="1" class="montableau" style="background-color:black;">
         <tr>
-          <td height="150px" width="35%" rowspan="2"><img  src="https://static.lpnt.fr/images/2019/04/29/18572845lpw-18635448-article-jpg_6167191_980x426.jpg"></td>
+          <td height="150px" width="35%" rowspan="2"><img  src="Image/"> </td>
           <td height="115px" width="75%" style="color:white;">Thanos ayant anéanti la moitié de l’univers, les Avengers restants resserrent les rangs dans ce vingt-deuxième film des Studios Marvel, grande conclusion d’un des chapitres de l’Univers Cinématographique Marvel.</td>
         </tr>
         <tr>
