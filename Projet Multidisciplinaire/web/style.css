@@ -21,6 +21,10 @@ body {
   background-size: cover;
 }
 
+#mybut{
+    background-image: url('https://www.color-stickers.com/2625-thickbox_default/stickers-fauteuil-rouge-cinema.jpg')
+}
+
 .container2{
   padding: 20%;
   padding-top: 5%;
