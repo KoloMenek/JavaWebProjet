@@ -12,6 +12,7 @@ package JavaProject;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
+import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 
 public class JDBC {
@@ -93,5 +94,31 @@ public class JDBC {
                 }
             }
         }
+    }
+    
+    public int getNumberOfMovies() throws SQLException {
+        int count = 0;
+        try(Connection cnx = connecterBDD();){
+            String SQL = "SELECT COUNT(*) FROM film;";
+            try(Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
+                rs.next();
+                count = rs.getInt(1);
+            }
+        }
+        return count;
+    }
+    
+    public Film getElementsFromFilm(int idFilm) throws SQLException{
+        Film leFilm = new Film();
+        try(Connection cnx = connecterBDD();){
+            String SQL = "SELECT nom,description,Url/Image FROM film WHERE idFilm = '" + idFilm + "';";
+            try(Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
+                rs.next();
+                leFilm.setNomFilm(rs.getString("nom"));
+                leFilm.setDescriptif(rs.getString("description"));
+                leFilm.setImage(rs.getString("Url/Image"));
+            }
+        }
+        return leFilm;
     }
 }
