@@ -62,5 +62,6 @@
         }
       %>
     </table>;
+  <center><input padding-top="5%" type="submit" value="Submit"></center>
   </body>
 </html>
