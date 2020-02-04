@@ -40,6 +40,7 @@
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
         <li class="menu_listeFilm"><a href="<%=request.getContextPath()%>/GestionListe_FilmServlet">Films</a></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
+        <li class="menu_contact"><a href="reservation.jsp">Reservation</a></li>
                 
         <% 
         String groupe = (String) session.getAttribute( "groupe" );
@@ -58,7 +59,7 @@
       <h1 style="text-align: center">Liste des films</h1>
     </p>
     <center>
-      <table border="1" class="montableau" style="background-color:black;">
+      <table border="1" class="montableau" style="background-color:black;" width="80%">
           <%
               for(int i=1; i<nbFilms+1;i++){
                   String nom,img,desc;
@@ -68,12 +69,12 @@
                   
           %>
         <tr>
-          <td height="150px" width="35%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
-          <td height="115px" width="75%" style="color:white;"><%out.println("<b>" + nom + "</b><br><br>");
+          <td height="150px" width="25%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
+          <td height="115px" width="75%" colspan="3" style="color:white;"><%out.println("<b>" + nom + "</b><br><br>");
               out.println(desc); %></td>
         </tr>
         <tr>
-          <td height="35px" width="75%" style="color:white;">Séance Vendredi :
+            <td width="25%" style="color:white;vertical-align: top;"><b>Séance Vendredi :</b><br>
               <%
                   for(int j = 0; j < lesSeancesVendredi.get(i).size() ;j++){
               %>
@@ -82,7 +83,7 @@
                   }
               %>
           </td>
-          <td height="35px" width="75%" style="color:white;">Séance Samedi :
+          <td  width="25%" style="color:white;vertical-align: top;"><b>Séance Samedi :</b><br>
               <%
                   for(int j = 0; j < lesSeancesSamedi.get(i).size() ;j++){
               %>
@@ -91,7 +92,7 @@
                   }
               %>
           </td>
-          <td height="35px" width="75%" style="color:white;">Séance Dimanche :
+          <td width="25%" style="color:white; vertical-align: top;"><b>Séance Dimanche :</b><br>
               <%
                   for(int j = 0; j < lesSeancesDimanche.get(i).size() ;j++){
               %>
