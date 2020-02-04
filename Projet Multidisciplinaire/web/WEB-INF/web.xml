@@ -8,9 +8,17 @@
         <servlet-class>JavaProject.GestionJDBC</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>JavaProject.Logout_servlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CreationCompte</servlet-name>
         <servlet-class>JavaProject.CreationCompte</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GestionJDBC</servlet-name>
         <url-pattern>/GestionJDBC</url-pattern>

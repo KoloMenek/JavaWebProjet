@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -22,27 +23,43 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login_servlet extends HttpServlet {
-    private String VUE = ""; 
+
+    private String VUE = "";
+
     @Override
-        public void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                JDBC bdd = new JDBC();
-                String user = request.getParameter("username");
-                String password = request.getParameter("password");
-                boolean result = false;
-                try {
-                 result = bdd.verificationUtilisateur(user,password);
-                 } catch (SQLException ex) {
-                 Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
-                }        
-                if (result == true){
-                    VUE = "/jdbc.jsp";
-                }
-                else {
-                    VUE = "/index.html";
-                }
-                RequestDispatcher distri = request.getRequestDispatcher(VUE);
-                distri.forward(request, response);
-                    
+        JDBC bdd = new JDBC();
+        String user = request.getParameter("username");
+        String password = request.getParameter("password");
+        boolean result = false;
+        try {
+            result = bdd.verificationUtilisateur(user, password);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (result == true) {
+            /* Création ou récupération de la session */
+            HttpSession session = request.getSession();                
+            /* Mise en session d'une chaîne de caractères */
+            boolean groupe = false;
+            String admin = "non";
+            try {
+                groupe = bdd.verificationAdmin(user, password);
+            } catch (SQLException ex) {
+                Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
+            }           
+            if (groupe == true)
+             admin = "admin";
+            
+            session.setAttribute("groupe", admin);
+            VUE = "/jdbc.jsp";
+        } else {
+            VUE = "/index.html";
+        }
+        
+        RequestDispatcher distri = request.getRequestDispatcher(VUE);
+        distri.forward(request, response);
+
     }
 }
