@@ -37,7 +37,7 @@ and open the template in the editor.
         <input type="password" placeholder="Entrer le mot de passe" name="password" required>
         <input type="submit" id="submit" value="LOGIN">
         <br>
-        <p class = "creer"><a href="CreationCompte.jsp">Créer un compte</a></p>
+        <p class = "creer"><a href="CreationCompte.jsp">Creer un compte</a></p>
       </form>
     </div>
   </body>

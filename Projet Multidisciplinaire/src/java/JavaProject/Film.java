@@ -12,8 +12,8 @@ package JavaProject;
  */
 public class Film {
     private Integer id;
-    private String nomFilm,descriptif, image;
-
+    private String nomFilm,descriptif, recette, image;
+    
     public Film() {
     }
 
