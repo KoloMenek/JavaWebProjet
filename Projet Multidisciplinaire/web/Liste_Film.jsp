@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- import the webpage's stylesheet -->
+    <!-- import t   he webpage's stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
     <!-- import the webpage's javascript file -->
@@ -28,7 +28,7 @@
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
       </ul>
     </nav>
-  <body>
+ <body>
     <p>
       <h1 style="text-align: center">Liste des films</h1>
     </p>
