@@ -19,6 +19,7 @@ and open the template in the editor.
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
         <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
         <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
+        <li class="menu_contact"><a href="index.html">Connexion</a></li>
       </ul>
     </nav>
         <div id ="container" style="text-align:center">
