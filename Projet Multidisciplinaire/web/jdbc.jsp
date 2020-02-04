@@ -29,13 +29,13 @@
         <% 
         String groupe = (String) session.getAttribute( "groupe" );
         if(groupe == "admin") { %>
-            <li class="menu_contact"><a href="index.html">Admin</a></li> 
+            <li class="menu_contact"><a href="Administration.jsp">Admin</a></li> 
         <%}if (groupe != null){
             %> <li class="menu_contact"><img style="width:20%; position:absolute; margin-top:10%"
                                           src="https://res.cloudinary.com/techsnips/image/fetch/w_2000,f_auto,q_auto,c_fit/https://adamtheautomator.com/content/images/size/w2000/2019/10/user-1633249_1280.png" 
                                           alt> <a href="Logout"><span style="margin-left:15%;">Déconnexion</a></span></li> <%
         } else { %>
-        <li class="menu_contact"><a href="index.html">Connexion</a></li><% } %>    
+        <li class="menu_contact"><a href="Connexion.jsp">Connexion</a></li><% } %>    
       </ul>
     </nav>
       

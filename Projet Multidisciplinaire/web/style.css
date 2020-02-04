@@ -698,5 +698,44 @@ transition:none
 }/*on revient directement a la premiere photo sans effet de slide*/
 
 
-/*BUTTON*/
+/*ADMINISTRATION*/
+#Centrage
+{
+  color:rgba(50,50,50, 1);
+  font-size:40px;
+  font-weight:bold;
+  position: absolute;
+  padding-left: 10%;
+  text-shadow: 0px 0px 10px white;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centrage1
+{
+  position: relative;
+  padding-left: 3%;
+  text-align: center;
+  color: white; 
+  margin:-2px;
+}
 
+#CentrageImg
+{
+  width:533px;
+  height:300px;
+  transition: height 0.4s, width 0.4s;
+}
+#CentrageImg:hover
+{
+  width:640px;
+  height:360px;
+}
+
+
+#Animation2
+{
+  padding-top:200px;
+  display:flex;
+  align-items:center;
+}
