@@ -25,8 +25,8 @@
       <input type="checkbox" id="menu-mobile" role="button">
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
-        <li class="menu_contact"><a href="contact.jsp">Contact</a></li>  
+        <li class="menu_listeFilm"><a href="GestionListe_FilmServlet">Films</a></li>
+        <li class="menu_contact"><a href="contact.jsp">Contact</a></li>                
         <% 
         String groupe = (String) session.getAttribute( "groupe" );
         if(groupe == "admin") { %>

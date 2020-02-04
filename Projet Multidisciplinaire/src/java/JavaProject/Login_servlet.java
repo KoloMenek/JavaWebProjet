@@ -38,9 +38,10 @@ public class Login_servlet extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+ 
         if (result == true) {
-            /* Création ou récupération de la session */
-            HttpSession session = request.getSession();                
+            HttpSession session = request.getSession(); 
+            /* Création ou récupération de la session */            
             /* Mise en session d'une chaîne de caractères */
             boolean groupe = false;
             String admin = "non";
@@ -49,14 +50,19 @@ public class Login_servlet extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
             }           
-            if (groupe == true)
-             admin = "admin";
+            if (groupe == true){
+             admin = "admin";}
             
             session.setAttribute("groupe", admin);
             VUE = "/jdbc.jsp";
-        } else {
-            VUE = "/index.html";
+        } 
+        else {
+            HttpSession session = request.getSession(); 
+            String t = "Mauvais identifiants"; 
+            session.setAttribute("wrong",t);
+            VUE = "/Connexion.jsp";
         }
+
         
         RequestDispatcher distri = request.getRequestDispatcher(VUE);
         distri.forward(request, response);
