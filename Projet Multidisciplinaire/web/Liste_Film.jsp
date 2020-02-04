@@ -59,7 +59,7 @@
       <h1 style="text-align: center">Liste des films</h1>
     </p>
     <center>
-      <table border="1" class="montableau" style="background-color:black;" width="80%">
+      <table border="1" class="montableau" style="background-color:rgba(153,153,153,0.4)" width="80%">
           <%
               for(int i=1; i<nbFilms+1;i++){
                   String nom,img,desc;
@@ -69,7 +69,7 @@
                   
           %>
         <tr>
-          <td height="150px" width="25%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
+          <td height="150px" width="25%" rowspan="2"><img src="Image/<% out.println(img); %>"> </td>
           <td height="115px" width="75%" colspan="3" style="color:white;"><%out.println("<b>" + nom + "</b><br><br>");
               out.println(desc); %></td>
         </tr>
