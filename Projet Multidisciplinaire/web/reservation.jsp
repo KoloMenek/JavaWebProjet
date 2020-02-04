@@ -20,29 +20,14 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <nav>
+   <nav>
       <label for="menu-mobile" class="menu-mobile">Menu</label>
       <input type="checkbox" id="menu-mobile" role="button">
       <ul>
         <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="listeFilm.html">Films</a></li>
-        <ul class="sousmenu">
-          <li><a href="#">A l'affiche</a></li>  
-          <li><a href="#">A venir</a></li>
-          <li><a href="#">Déja passé dans votre cinéma</a></li>
-        </ul>
-        <li class="menu_reservation">
-          <a href="reservation.html">Réserver ma place</a>
-        </li>
-        <ul class="sousmenu">
-          <li><a href="#">Réserver ma place</a></li>
-          <li><a href="#">Nos tarifs</a></li>
-        </ul>
-        <li class="menu_contact"><a href="contact.html">Contact</a></li>
-        <ul class="sousmenu">
-          <li><a href="#">Nous trouver</a></li>
-          <li><a href="#">Nous contacter</a></li>
-        </ul>
+        <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
+        <li class="menu_reservation"><a href="reservation.jsp"></li>
+        <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
       </ul>
     </nav>
     <h1>Les formulaires HTML</h1>

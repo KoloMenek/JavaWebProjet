@@ -14,22 +14,12 @@ and open the template in the editor.
     <body>
  <nav>
       <label for="menu-mobile" class="menu-mobile">Menu</label>
-      <input type="checkbox" id="menu-mobile" role="button" />
+      <input type="checkbox" id="menu-mobile" role="button">
       <ul>
-        <li class="menu_accueil"><a href="index.html">Accueil</a></li>
-        <li class="menu_listeFilm"><a href="listeFilm.html">Films</a>
-          <ul class="sousmenu">
-            <li><a href="#">A l'affiche</a></li>
-            <li><a href="#">A venir</a></li>
-            <li><a href="#">Déja passé dans votre cinéma</a></li>
-          </ul>
-        </li>
-        <li class="menu_contact"><a href="contact.html">Contact</a>
-          <ul class="sousmenu">
-            <li><a href="#">Nous trouver</a></li>
-            <li><a href="#">Nous contacter</a></li>
-          </ul>
-        </li>
+        <li class="menu_accueil"><a href="jdbc.jsp">Accueil</a></li>
+        <li class="menu_listeFilm"><a href="Liste_Film.jsp">Films</a></li>
+        <li class="menu_reservation"><a href="reservation.jsp"></li>
+        <li class="menu_contact"><a href="contact.jsp">Contact</a></li>
       </ul>
     </nav>
         <div id ="container" style="text-align:center">
