@@ -4,6 +4,12 @@
     Author     : Mickael
 --%>
 
+<%@page import="java.util.HashMap"%>
+<%@page import="JavaProject.Film"%>
+<%
+    HashMap<Integer, Film> lesFilms = (HashMap)request.getAttribute("lesFilms");
+    Integer nbFilms = (Integer)request.getAttribute("nbFilms");
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,9 +51,17 @@
     </p>
     <center>
       <table border="1" class="montableau" style="background-color:black;">
+          <%
+              for(int i=1; i<nbFilms+1;i++){
+                  String nom,img,desc;
+                  img = lesFilms.get(i).getImage();
+                  nom = lesFilms.get(i).getNomFilm();
+                  desc = lesFilms.get(i).getDescriptif();
+          %>
         <tr>
-          <td height="150px" width="35%" rowspan="2"><img  src="Image/"> </td>
-          <td height="115px" width="75%" style="color:white;">Thanos ayant anéanti la moitié de l’univers, les Avengers restants resserrent les rangs dans ce vingt-deuxième film des Studios Marvel, grande conclusion d’un des chapitres de l’Univers Cinématographique Marvel.</td>
+          <td height="150px" width="35%" rowspan="2"><img  src="Image/<% out.println(img); %>"> </td>
+          <td height="115px" width="75%" style="color:white;"><%out.println(nom + "<br>");
+              out.println(desc); %></td>
         </tr>
         <tr>
           <td height="35px" width="75%" style="color:white;">Séance :
@@ -56,6 +70,9 @@
               <a href="something" class="button4" style="background-color:#f14e4e">22:15</a>
           </td>
         </tr>
+        <%
+            }
+        %>
       </table>
     </center>
   </body>

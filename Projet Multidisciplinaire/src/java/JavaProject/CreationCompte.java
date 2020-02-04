@@ -35,7 +35,7 @@ public class CreationCompte extends HttpServlet {
         String pswd2 = request.getParameter("password2");
         String email = request.getParameter("email");
         String leReturn = "Erreur Création compte";
-        
+
         if (verifMDP(pswd, pswd2)) {
             JDBC bdd = new JDBC();
             try {

@@ -35,7 +35,7 @@ public class JDBC {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Ok");
-            String url = "jdbc:mysql://localhost:3306/cinema";
+            String url = "jdbc:mysql://localhost:3306/cinema?useUnicode=yes&characterEncoding=UTF-8";
             String user = "root";
             String password = "";
             Connection cnx = DriverManager.getConnection(url, user, password);
@@ -111,12 +111,12 @@ public class JDBC {
     public Film getElementsFromFilm(int idFilm) throws SQLException{
         Film leFilm = new Film();
         try(Connection cnx = connecterBDD();){
-            String SQL = "SELECT nom,description,Url/Image FROM film WHERE idFilm = '" + idFilm + "';";
+            String SQL = "SELECT nom,description,url_image FROM film WHERE idFilm = '" + idFilm + "';";
             try(Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
                 rs.next();
                 leFilm.setNomFilm(rs.getString("nom"));
                 leFilm.setDescriptif(rs.getString("description"));
-                leFilm.setImage(rs.getString("Url/Image"));
+                leFilm.setImage(rs.getString("url_image"));
             }
         }
         return leFilm;
