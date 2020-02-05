@@ -19,6 +19,9 @@ Author     : Mickael
         <!-- import the webpage's javascript file -->
         <script src="/script.js" defer></script>
     </head>
+    <% 
+        String idSeanceString = (String)request.getParameter("idSeance");
+    %>
     <body>
         <nav>
             <label for="menu-mobile" class="menu-mobile">Menu</label>
@@ -41,7 +44,8 @@ Author     : Mickael
             </ul>
         </nav>
         <h1>Choisissez vos places</h1>
-        <form method = "post" action="ReservationServlet" style="background-color: rgba(0,0,0,0); border: 0px">
+        <form method = "POST" action="ReservationServlet" style="background-color: rgba(0,0,0,0); border: 0px">
+            <input type="hidden" name="idSeance" value="<% out.print(idSeanceString); %>">
             <table style="width: 65%; height: 65%; background-color: RGBa(206, 206, 206, 0.6); margin:auto;">
                 <%
                     for (int i = 0; i < 5; i++) {

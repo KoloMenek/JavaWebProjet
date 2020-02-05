@@ -31,12 +31,12 @@ public class Reservation_servlet extends HttpServlet {
     String URL = "/PageApresCreationCompte.jsp";
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         JDBC bdd = new JDBC();
         Integer idClient = (Integer) session.getAttribute("idClient");
-        String idSeanceString =  (String) request.getParameter("idSeance");
+        String idSeanceString = (String) request.getParameter("idSeance");
         int idSeance = Integer.parseInt(idSeanceString);
         Integer idTarif = (Integer) session.getAttribute("idTarif");
         int idReservation = -1;
@@ -67,6 +67,6 @@ public class Reservation_servlet extends HttpServlet {
             distributeur.forward(request, response);
 
         }
-
+    
     }
 
