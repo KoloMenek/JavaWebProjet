@@ -32,38 +32,40 @@ public class Login_servlet extends HttpServlet {
         JDBC bdd = new JDBC();
         String user = request.getParameter("username");
         String password = request.getParameter("password");
+        HttpSession session = request.getSession();
         boolean result = false;
         try {
             result = bdd.verificationUtilisateur(user, password);
         } catch (SQLException ex) {
             Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
         }
- 
+
         if (result == true) {
-            HttpSession session = request.getSession(); 
-            /* Création ou récupération de la session */            
-            /* Mise en session d'une chaîne de caractères */
+            
+            /* Création ou récupération de la session */
+ /* Mise en session d'une chaîne de caractères */
             boolean groupe = false;
             String admin = "non";
             try {
                 groupe = bdd.verificationAdmin(user, password);
+                if (groupe) {
+                    HttpSession session1 = request.getSession();
+                    int id = bdd.getIdentifiant(user);
+                    session1.setAttribute("idClient", id);
+                    admin = "admin";
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(Login_servlet.class.getName()).log(Level.SEVERE, null, ex);
-            }           
-            if (groupe == true){
-             admin = "admin";}
-            
+            }
+
             session.setAttribute("groupe", admin);
             VUE = "/jdbc.jsp";
-        } 
-        else {
-            HttpSession session = request.getSession(); 
-            String t = "Mauvais identifiants"; 
-            session.setAttribute("wrong",t);
+        } else {
+            String t = "Mauvais identifiants";
+            session.setAttribute("wrong", t);
             VUE = "/Connexion.jsp";
         }
 
-        
         RequestDispatcher distri = request.getRequestDispatcher(VUE);
         distri.forward(request, response);
 

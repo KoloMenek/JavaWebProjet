@@ -32,9 +32,10 @@ public class Programmation_servlet extends HttpServlet {
     JDBC bdd = new JDBC();
     int nbFilms = 0;
     HashMap<Integer, Film> lesFilms = new HashMap<>();
-
+    
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         try {
             nbFilms = bdd.getNumberOfMovies();
         } catch (SQLException ex) {
@@ -55,6 +56,7 @@ public class Programmation_servlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         String Film = request.getParameter("Film");
         String Type = request.getParameter("Type");
         String Langue = request.getParameter("Langue");
@@ -63,7 +65,7 @@ public class Programmation_servlet extends HttpServlet {
         String SalleS = request.getParameter("Salle");
         String leReturn = "test";
         try {
-            DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
+            DateFormat dateFormat = new SimpleDateFormat("hh:mm");
             Date date1 = dateFormat.parse(HeureS);
             int FilmId = bdd.getIDFilm(Film);
             int Salle = Integer.parseInt(SalleS);
