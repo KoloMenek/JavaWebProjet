@@ -58,7 +58,7 @@
                     </a>
                 </div>
                 <div  class="centrage1">
-                    <a href="Historique.jsp">
+                    <a href="<%=request.getContextPath()%>/HistoriqueServlet">
                         <img id="CentrageImg" src="Image/historique.jpg" alt="">
                         <div  id="Centrage">
                            Historique réservation

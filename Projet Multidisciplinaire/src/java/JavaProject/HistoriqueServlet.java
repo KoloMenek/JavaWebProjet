@@ -25,8 +25,9 @@ import javax.servlet.http.HttpSession;
 public class HistoriqueServlet extends HttpServlet {
     
     String URL = "/Historique.jsp";
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
+
         ArrayList<Historique> histoClients = new ArrayList<>();
         JDBC bdd = new JDBC();
         try {

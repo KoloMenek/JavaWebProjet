@@ -40,6 +40,8 @@
   <center><table border="0" style="margin: auto; width: 80%">
         <thead style="background-color: grey; color: white; ">
           <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
             <th scope="col">Pseudo</th>
             <th scope="col">Nombre de place</th>
           </tr>
@@ -49,6 +51,7 @@
                 for(int i = 0; i < histoClients.size();i++){
             %>
           <tr>
+            <td><% out.print(histoClients.get(i).getPseudo()); %></td>
             <td><% out.print(histoClients.get(i).getPseudo()); %></td>
             <td><% out.print(histoClients.get(i).getPseudo()); %></td>
             <td><% out.print(histoClients.get(i).getNbPlaces()); %></td>
