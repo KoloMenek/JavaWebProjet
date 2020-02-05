@@ -28,7 +28,7 @@ import javax.servlet.http.Part;
  */
 @WebServlet(name = "Reservation_servlet", urlPatterns = {"/Reservation_servlet"})
 public class Reservation_servlet extends HttpServlet {
-    String URL = "/PageApresCreationCompte.jsp";
+    String URL = "/ChoixTarifs.jsp";
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
