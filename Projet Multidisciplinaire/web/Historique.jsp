@@ -4,6 +4,8 @@
     Author     : Mickael
 --%>
 
+<%@page import="JavaProject.Historique"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +20,9 @@
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
+  <%
+      ArrayList<Historique> histoClients = (ArrayList)request.getAttribute("histoClients");
+  %>
   <body>
     <nav>
       <label for="menu-mobile" class="menu-mobile">Menu</label>
@@ -40,12 +45,17 @@
           </tr>
         </thead>
         <tbody style="background-color: white;">
+            <%
+                for(int i = 0; i < histoClients.size();i++){
+            %>
           <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>1</td>
+            <td><% out.print(histoClients.get(i).getPseudo()); %></td>
+            <td><% out.print(histoClients.get(i).getPseudo()); %></td>
+            <td><% out.print(histoClients.get(i).getNbPlaces()); %></td>
           </tr>
-          
+          <%
+              }
+          %>
         </tbody>
       </table></center>
     </body>

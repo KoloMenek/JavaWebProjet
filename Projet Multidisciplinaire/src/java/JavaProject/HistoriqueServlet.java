@@ -8,6 +8,7 @@ package JavaProject;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -26,9 +27,14 @@ public class HistoriqueServlet extends HttpServlet {
     String URL = "/Historique.jsp";
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+        ArrayList<Historique> histoClients = new ArrayList<>();
         JDBC bdd = new JDBC();
-        
-        
+        try {
+            histoClients = bdd.getHistorique();
+        } catch (SQLException ex) {
+            Logger.getLogger(HistoriqueServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        request.setAttribute("histoClients", histoClients);
         RequestDispatcher distributeur = request.getRequestDispatcher(URL);
         distributeur.forward(request, response);
     }

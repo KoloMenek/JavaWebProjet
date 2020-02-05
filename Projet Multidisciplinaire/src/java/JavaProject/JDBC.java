@@ -227,32 +227,33 @@ public class JDBC {
         return recette;
     }
 
-    public Historique getHistorique() throws SQLException {
-        Historique historique = new Historique();
+    public ArrayList<Historique> getHistorique() throws SQLException {
+        ArrayList<Historique> histoClients = new ArrayList<>();
+        int nbPlaces, idClient;
+        String pseudo;
         int idReservation = -1;
         String SQL;
         try (Connection cnx = connecterBDD();) {
             SQL = "Select idReservation from reservation";
-
             try (Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL)) {
                 while (rs.next()) {
                     idReservation = rs.getInt("idReservation");
                     SQL = "SELECT nbPlaces, idClient from reservation where idReservation = '" + idReservation + "';";
-                    try (Statement statement2 = cnx.createStatement(); ResultSet rs2 = statement.executeQuery(SQL);) {
+                    try (Statement statement2 = cnx.createStatement(); ResultSet rs2 = statement2.executeQuery(SQL);) {
                         rs2.next();
-                        historique.setNbPlaces(rs2.getInt("nbPlaces"));
-                        historique.setIdClient(rs2.getInt("idClient"));
+                        nbPlaces = rs2.getInt("nbPlaces");
+                        idClient = rs2.getInt("idClient");
                     }
-                    SQL = "SELECT pseudo from compte_client where idCompte = '" + historique.getIdClient() + "';";
-                    try (Statement statement3 = cnx.createStatement(); ResultSet rs3 = statement.executeQuery(SQL);) {
+                    SQL = "SELECT pseudo from compte_client where idCompte = '" + idClient + "';";
+                    try (Statement statement3 = cnx.createStatement(); ResultSet rs3 = statement3.executeQuery(SQL);) {
                         rs3.next();
-                        historique.setPseudo(rs3.getString(1));
+                        pseudo = rs3.getString(1);
                     }
-
+                    histoClients.add(new Historique(pseudo,nbPlaces,idClient));
                 }
             }
         }
-        return historique;
+        return histoClients;
     }
 
     public int getIdentifiant(String user) throws SQLException {
