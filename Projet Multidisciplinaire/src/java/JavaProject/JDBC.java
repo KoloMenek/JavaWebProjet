@@ -249,7 +249,7 @@ public class JDBC {
                         rs3.next();
                         pseudo = rs3.getString(1);
                     }
-                    histoClients.add(new Historique(pseudo,nbPlaces,idClient));
+                    histoClients.add(new Historique(pseudo,nbPlaces,idClient,nom,prenom));
                 }
             }
         }
