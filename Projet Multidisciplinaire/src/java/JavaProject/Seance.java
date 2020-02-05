@@ -22,24 +22,31 @@ public class Seance {
     private int laDate;
     private Time horaire;
     private String langue;
+    private int idSeance;
 
     public Seance() {
     }
 
-    public Seance(int saleUtilise, int leFilm, String type, int laDate, Time horaire, String langue) {
+    public Seance(int saleUtilise, int leFilm, String type, int laDate, Time horaire, String langue,int idSeance) {
         this.saleUtilise = saleUtilise;
         this.leFilm = leFilm;
         this.type = type;
         this.laDate = laDate;
         this.horaire = horaire;
         this.langue = langue;
+        this.idSeance = idSeance;
     }
 
     public Time getHoraire() {
         return horaire;
     }
 
-     
+    public int getIdSeance() {
+        return idSeance;
+    }
+
+
+    
 
     public int getLaDate() {
         return laDate;

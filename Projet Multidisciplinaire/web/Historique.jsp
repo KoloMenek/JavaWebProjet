@@ -51,8 +51,8 @@
                 for(int i = 0; i < histoClients.size();i++){
             %>
           <tr>
-            <td><% out.print(histoClients.get(i).getPseudo()); %></td>
-            <td><% out.print(histoClients.get(i).getPseudo()); %></td>
+            <td><% out.print(histoClients.get(i).getNom()); %></td>
+            <td><% out.print(histoClients.get(i).getPrenom()); %></td>
             <td><% out.print(histoClients.get(i).getPseudo()); %></td>
             <td><% out.print(histoClients.get(i).getNbPlaces()); %></td>
           </tr>
