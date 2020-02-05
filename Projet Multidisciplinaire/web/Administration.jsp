@@ -42,7 +42,7 @@
 
             <div id=Animation2>
                 <div class="centrage1">
-                    <a href="Programmation.jsp">
+                    <a href="Programmation_Servlet">
                         <img id="CentrageImg" src="Image/Programmation.jpg" alt="">
                         <div id = "Centrage">
                             Programmation films
@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div  class="centrage1">
-                    <a href="Recette.jsp">
+                    <a href="RecetteServlet">
                         <img id="CentrageImg" src="Image/recette.jpg" alt="">
                         <div id = "Centrage">
                             Recette par film

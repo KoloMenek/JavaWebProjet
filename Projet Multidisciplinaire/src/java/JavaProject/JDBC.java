@@ -200,4 +200,15 @@ public class JDBC {
             }
         }
     }
+    public int getRecette(int idFilm) throws SQLException {
+        int recette = -1;
+        try (Connection cnx = connecterBDD();) {
+            String SQL = "SELECT recette from film where idFilm = '" + idFilm + "';";
+            try (Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
+                rs.next();
+                recette = rs.getInt("recette");
+            }
+        }
+        return recette;
+    }
 }

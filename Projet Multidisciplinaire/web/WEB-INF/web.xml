@@ -8,6 +8,10 @@
         <servlet-class>JavaProject.GestionJDBC</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Programmation_Servlet</servlet-name>
+        <servlet-class>JavaProject.Programmation_servlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Logout</servlet-name>
         <servlet-class>JavaProject.Logout_servlet</servlet-class>
     </servlet>
@@ -23,6 +27,10 @@
         <servlet-name>ReservationServlet</servlet-name>
         <servlet-class>JavaProject.Reservation_servlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RecetteServlet</servlet-name>
+        <servlet-class>JavaProject.RecetteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
@@ -30,6 +38,10 @@
     <servlet-mapping>
         <servlet-name>GestionJDBC</servlet-name>
         <url-pattern>/GestionJDBC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Programmation_Servlet</servlet-name>
+        <url-pattern>/Programmation_Servlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreationCompte</servlet-name>
@@ -42,6 +54,10 @@
     <servlet-mapping>
         <servlet-name>ReservationServlet</servlet-name>
         <url-pattern>/ReservationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecetteServlet</servlet-name>
+        <url-pattern>/RecetteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
