@@ -32,6 +32,7 @@ public class Login_servlet extends HttpServlet {
         JDBC bdd = new JDBC();
         String user = request.getParameter("username");
         String password = request.getParameter("password");
+        HttpSession session = request.getSession();
         boolean result = false;
         try {
             result = bdd.verificationUtilisateur(user, password);
@@ -40,7 +41,7 @@ public class Login_servlet extends HttpServlet {
         }
 
         if (result == true) {
-            HttpSession session = request.getSession();
+            
             /* Création ou récupération de la session */
  /* Mise en session d'une chaîne de caractères */
             boolean groupe = false;
@@ -60,7 +61,6 @@ public class Login_servlet extends HttpServlet {
             session.setAttribute("groupe", admin);
             VUE = "/jdbc.jsp";
         } else {
-            HttpSession session = request.getSession();
             String t = "Mauvais identifiants";
             session.setAttribute("wrong", t);
             VUE = "/Connexion.jsp";

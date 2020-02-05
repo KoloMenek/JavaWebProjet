@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -24,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RecetteServlet extends HttpServlet {
     String URL = "/Recette.jsp";
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         HashMap<Integer, Film> lesFilms = new HashMap<>();
         Integer recette = -1;
         JDBC bdd = new JDBC();
