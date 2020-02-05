@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,11 +34,28 @@ public class Reservation_servlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        JDBC bdd = new JDBC();
         Integer idClient = (Integer) session.getAttribute("idClient");
-        
+        Integer idSeance = (Integer) session.getAttribute("idClient");
+        Integer idTarif = (Integer) session.getAttribute("idTarif");
+        int idReservation = -1;
         String[] lesChoix = (String[]) request.getParameterValues("Choix");
-        for(int i =0;i<lesChoix.length;i++)
-            System.out.println(lesChoix[i]);
+        // a enlever
+        idClient = 1;
+        idSeance = 1;
+        idTarif = 1;
+        try {
+               idReservation = bdd.ajoutReservation(idClient,idSeance);
+            } catch (SQLException ex) {
+                Logger.getLogger(Reservation_servlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        for(int i =0;i<lesChoix.length;i++){
+            try {
+                bdd.ajoutReservationPlaces(idReservation, Integer.parseInt(lesChoix[i]), idTarif);
+            } catch (SQLException ex) {
+                Logger.getLogger(Reservation_servlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
         
         

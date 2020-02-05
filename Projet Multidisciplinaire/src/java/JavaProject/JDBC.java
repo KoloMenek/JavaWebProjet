@@ -136,15 +136,36 @@ public class JDBC {
         return lesSeances;
     }
     
-    public void ajoutReservation(int place, int idClient, int idSeance) throws SQLException{
+    public int ajoutReservation(int idClient, int idSeance) throws SQLException{
+        int leRetour = -1;
         try (Connection cnx = connecterBDD();){
             String SQL = "INSERT INTO reservation (idSeance,idClient) "
                        + "VALUES ('" + idSeance + "','" + idClient + "')";
-            try(Statement statement = cnx.prepareStatement(SQL_INSERT,Statement.RETURN_GENERATED_KEYS);){
+            try(PreparedStatement statement = cnx.prepareStatement(SQL,Statement.RETURN_GENERATED_KEYS);){
+                
+                    int affectedRows = statement.executeUpdate();
+                    if(affectedRows == 0){
+                        throw new SQLException("Creating user failed, no rows affected.");
+                    }
+                    try(ResultSet keys = statement.getGeneratedKeys()){
+                        if(keys.next()){
+                            leRetour = keys.getInt(1);
+                        }
+                    }
+                
+            }
+        }
+        return leRetour;
+    }
+    public void ajoutReservationPlaces(int idReservation,int idPlace, int idTarif) throws SQLException{
+        try (Connection cnx = connecterBDD();){
+            String SQL = "INSERT INTO reservation_place(id_Reservation,id_Tarif,idPlace) "
+                       + "VALUES ('" + idReservation + "','" + idTarif + "', '" + idPlace + "')";
+            try(Statement statement = cnx.createStatement();){
                 try {
                     statement.executeUpdate(SQL);
                 }catch(Exception e){
-                    System.err.println("Exception ajout compte"); 
+                    System.err.println("Exception ajout reservation place"); 
                 }
             }
         }
