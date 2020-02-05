@@ -46,8 +46,10 @@
         </nav>
 
         <form method = "POST"id="prog">
-            <label id = "text1">Film : </label>
-            <SELECT name="Film" size="1">
+            <table>
+                <tr>
+                    <td><label id = "text1">Film : </label></td>
+                    <td><SELECT name="Film" size="1">
                 <%  for (int i = 1; i < nbFilms + 1; i++) {
                         String nom, img, desc;
                         nom = lesFilms.get(i).getNomFilm();%>
@@ -55,35 +57,46 @@
                     <% out.println(nom); %> 
                 </option>
                 <%}%>
-
+                </td>
             </SELECT>
-                <label id = "text1">Type : </label>
-            <SELECT name="Type" size="1">
+                </tr>
+                <tr>
+                    <td><label id = "text1">Type : </label></td>
+                    <td><SELECT name="Type" size="1">
                 <OPTION value = "2D">2D
                 <OPTION value = "3D">3D
                 <OPTION value = "IMAX">IMAX
                 <OPTION value = "IMAX 3D">IMAX 3D
                 <OPTION value = "4DX">4DX
-            </SELECT>
-                <label id = "text1">Langue : </label>
-            <SELECT name="Langue" size="1">
+                        </SELECT></td>
+                </tr>
+                <tr>
+                    <td><label id = "text1">Langue : </label></td>
+                    <td><SELECT name="Langue" size="1">
                 <OPTION value = "VF">VF
                 <OPTION value = "VOSTFR">VOSTFR
                 <OPTION value = "VO">VO
-            </SELECT>
-            <label id = "text1">Jour : </label>
-            <SELECT name="Jour" size="1">
+                        </SELECT></td>
+                <tr>
+                    <td><label id = "text1">Jour : </label></td>
+                    <td><SELECT name="Jour" size="1">
                 <OPTION value = "5">vendredi
                 <OPTION value = "6" >samedi
                 <OPTION value = "7" >dimanche
-            </SELECT>
-            <label id = "text1">Heure : </label> <input value="18:00" type="time" name="Heure" required><br>
-            <label id = "text1">Salle : </label>
-            <SELECT name="Salle" size="1">
+                        </SELECT></td>
+            </tr>
+            <tr padding-top="15px" padding-bottom="15px">
+                <td><label id = "text1">Heure : </label></td>
+                <td><input value="18:00" type="time" name="Heure" required><br></td>
+            </tr>
+            <tr>
+                <td><label id = "text1">Salle : </label></td>
+                <td><SELECT name="Salle" size="1">
                 <OPTION value = "1">1 - Georges Brassens
                 <OPTION value = "2">2 - Jean-Dujardin
-            </SELECT>
-
+                    </SELECT></td>
+            </tr>
+            </table>
             <input type="submit" action="ProgrammationServlet" id="submit" value="Ajouter séance">
         </form>
 
