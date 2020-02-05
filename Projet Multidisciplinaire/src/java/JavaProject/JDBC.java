@@ -251,7 +251,7 @@ public class JDBC {
                         prenom = rs3.getString("prenom");
                         pseudo = rs3.getString("pseudo");
                     }
-                    histoClients.add(new Historique(pseudo,nbPlaces,idClient));
+                    histoClients.add(new Historique(pseudo,nbPlaces,idClient,nom,prenom));
                 }
             }
         }
