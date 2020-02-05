@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <welcome-file-list>
-    <welcome-file>Connexion.jsp</welcome-file>
-</welcome-file-list>
+        <welcome-file>Connexion.jsp</welcome-file>
+    </welcome-file-list>
     <servlet>
         <servlet-name>GestionJDBC</servlet-name>
         <servlet-class>JavaProject.GestionJDBC</servlet-class>
@@ -19,6 +19,10 @@
         <servlet-name>GestionListe_FilmServlet</servlet-name>
         <servlet-class>JavaProject.GestionListe_FilmServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReservationServlet</servlet-name>
+        <servlet-class>JavaProject.Reservation_servlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
@@ -34,6 +38,10 @@
     <servlet-mapping>
         <servlet-name>GestionListe_FilmServlet</servlet-name>
         <url-pattern>/GestionListe_FilmServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReservationServlet</servlet-name>
+        <url-pattern>/ReservationServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

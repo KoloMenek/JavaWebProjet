@@ -135,4 +135,18 @@ public class JDBC {
 
         return lesSeances;
     }
+    
+    public void ajoutReservation(int place, int idClient, int idSeance) throws SQLException{
+        try (Connection cnx = connecterBDD();){
+            String SQL = "INSERT INTO reservation (idSeance,idClient) "
+                       + "VALUES ('" + idSeance + "','" + idClient + "')";
+            try(Statement statement = cnx.prepareStatement(SQL_INSERT,Statement.RETURN_GENERATED_KEYS);){
+                try {
+                    statement.executeUpdate(SQL);
+                }catch(Exception e){
+                    System.err.println("Exception ajout compte"); 
+                }
+            }
+        }
+    }
 }
