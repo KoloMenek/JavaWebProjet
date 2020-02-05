@@ -30,7 +30,7 @@ and open the template in the editor.
     <div id="container">    
       <form method = "POST" action="Login">
         <h4>Connexion</h4>
-        <img  id="logo" src="https://cdn.discordapp.com/attachments/671725600104513539/673807332807016449/cinema-logo_23-2147503279.jpg" alt="Erreur Image">
+        <img  id="logo" src="Image/Accueil.jpg" alt="Erreur Image">
         <h3><label>Nom d'utilisateur</label></h3>
         <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
         <h3><label>Mot de passe</label></h3>

@@ -63,9 +63,9 @@ public class Programmation_servlet extends HttpServlet {
         HttpSession session = request.getSession();
         String Film = request.getParameter("Film");
         String Type = request.getParameter("Type");
-        String Langue = request.getParameter("Langue"); 
+        String Langue = request.getParameter("Langue");
         String JourS = request.getParameter("Jour");
-        String HeureS = request.getParameter("Heure") +":00";
+        String HeureS = request.getParameter("Heure") + ":00";
         String SalleS = request.getParameter("Salle");
         String leReturn = "test";
 
@@ -79,5 +79,8 @@ public class Programmation_servlet extends HttpServlet {
         }
         request.setAttribute("test", leReturn);
         System.out.println(leReturn);
+
+        RequestDispatcher distri = request.getRequestDispatcher("Administration.jsp");
+        distri.forward(request, response);
     }
 }
