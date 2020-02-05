@@ -40,7 +40,7 @@
     </nav>
       
           <p>
-      <h1 style="text-align: center">Liste des films</h1>
+      <h1 style="text-align: center">Films à l'affiche dans votre cinéma :</h1>
     </p>
 <div class="diapo_auto_rwd">
 <input name="diapo" id="slide1" type="radio" class="slide_diapo">

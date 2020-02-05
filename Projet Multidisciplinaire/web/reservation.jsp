@@ -41,7 +41,7 @@ Author     : Mickael
             </ul>
         </nav>
         <h1>Choisissez vos places</h1>
-        <form method = "post" action="ReservationServlet">
+        <form method = "post" action="ReservationServlet" style="background-color: rgba(0,0,0,0); border: 0px">
             <table style="width: 65%; height: 65%; background-color: RGBa(206, 206, 206, 0.6); margin:auto;">
                 <%
                     for (int i = 0; i < 5; i++) {
