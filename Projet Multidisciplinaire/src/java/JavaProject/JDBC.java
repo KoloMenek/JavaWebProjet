@@ -185,14 +185,16 @@ public class JDBC {
         return LeFilm;
     }
 
-    public String AjoutSeance(int id_film, String type, String langue, int idSalle, int jour, Date Heure) throws SQLException {
-        String leReturn = "Erreur Création séance";
+    public String AjoutSeance(String film, String type, String langue, int idSalle, int jour, java.sql.Time Heure) throws SQLException {
+        int id_film = getIDFilm(film);
+        String leReturn = "Erreur Création séance " +  id_film + " "+ type + " " +  langue + " " + idSalle + " " + jour + " " + Heure + "" + film;
+        
         try (Connection cnx = connecterBDD();) {
             String SQL = "INSERT INTO seance_cinema (idFilm,type,langue,idSalle,jour,horaire)"
-                    + "VALUES ('" + id_film + "','" + type + "', '" + langue + "', '" + idSalle + "', '" + jour + "', '" + Heure + "')";
+                    + "VALUES ('" + id_film + "','" + type + "', '" + langue + "', '" + idSalle + "', '" + jour + "','" + Heure + "')";
             try (Statement statement = cnx.createStatement();) {
                 statement.executeUpdate(SQL);
-                leReturn = "Votre séance a été crée avec succés";
+                leReturn = "Votre séance a été crée avec succés" +  id_film + " "+ type + " " +  langue + " " + idSalle + " " + jour + " " + Heure + " " + film;
             } catch (Exception e) {
                 System.err.println("Exception ajout séance");
             }

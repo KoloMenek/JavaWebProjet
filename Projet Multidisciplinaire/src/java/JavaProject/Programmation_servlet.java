@@ -7,12 +7,16 @@ package JavaProject;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -32,7 +36,7 @@ public class Programmation_servlet extends HttpServlet {
     JDBC bdd = new JDBC();
     int nbFilms = 0;
     HashMap<Integer, Film> lesFilms = new HashMap<>();
-    
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -59,22 +63,21 @@ public class Programmation_servlet extends HttpServlet {
         HttpSession session = request.getSession();
         String Film = request.getParameter("Film");
         String Type = request.getParameter("Type");
-        String Langue = request.getParameter("Langue");
+        String Langue = request.getParameter("Langue"); 
         String JourS = request.getParameter("Jour");
-        String HeureS = request.getParameter("Heure");
+        String HeureS = request.getParameter("Heure") +":00";
         String SalleS = request.getParameter("Salle");
         String leReturn = "test";
+
+        java.sql.Time T = java.sql.Time.valueOf(HeureS);
+        int Salle = Integer.parseInt(SalleS);
+        int Jour = Integer.parseInt(JourS);
         try {
-            DateFormat dateFormat = new SimpleDateFormat("hh:mm");
-            Date date1 = dateFormat.parse(HeureS);
-            int FilmId = bdd.getIDFilm(Film);
-            int Salle = Integer.parseInt(SalleS);
-            int Jour = Integer.parseInt(JourS);
-            leReturn = bdd.AjoutSeance(FilmId, Type, Langue, Salle, Jour, (java.sql.Date) date1);
-            request.setAttribute("test", leReturn);
-        } catch (ParseException | SQLException ex) {
+            leReturn = bdd.AjoutSeance(Film, Type, Langue, Salle, Jour, T);
+        } catch (SQLException ex) {
             Logger.getLogger(Programmation_servlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        request.setAttribute("test", leReturn);
         System.out.println(leReturn);
     }
 }

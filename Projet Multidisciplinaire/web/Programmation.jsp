@@ -3,6 +3,7 @@
     Created on : 4 févr. 2020, 23:19:37
     Author     : Mickael
 --%>
+<%@page import="JavaProject.JDBC"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="JavaProject.Film"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,6 +12,8 @@
     <%
         HashMap<Integer, Film> lesFilms = (HashMap) request.getAttribute("lesFilms");
         Integer nbFilms = (Integer) request.getAttribute("nbFilms");
+        JDBC bdd = new JDBC();
+        out.println(bdd.getIDFilm("Avengers 4"));
     %>
     <head>
         <meta charset="utf-8" />
@@ -51,10 +54,10 @@
                     <td><label id = "text1">Film : </label></td>
                     <td><SELECT name="Film" size="1">
                 <%  for (int i = 1; i < nbFilms + 1; i++) {
-                        String nom, img, desc;
+                        String nom;
                         nom = lesFilms.get(i).getNomFilm();%>
-                <OPTION value = "<% out.println(nom); %>">
-                    <% out.println(nom); %> 
+                <OPTION value = "<%out.print(nom);%>">
+                    <% out.println(nom);%> 
                 </option>
                 <%}%>
                 </td>
