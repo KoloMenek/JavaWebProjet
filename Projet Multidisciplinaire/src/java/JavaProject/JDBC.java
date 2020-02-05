@@ -157,6 +157,36 @@ public class JDBC {
         }
         return leRetour;
     }
+    
+    public int getIDFilm(String film) throws SQLException {
+        int LeFilm = 0;
+        try (Connection cnx = connecterBDD();) {
+            String SQL = "SELECT nom,description,url_image FROM film WHERE nom = '" + film + "';";
+            try (Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
+                rs.next();
+                LeFilm = rs.getInt("idFilm");
+            }
+        }
+        return LeFilm;
+    }
+
+    public String AjoutSeance(int id_film, String type, String langue, int idSalle, int jour, Date Heure) throws SQLException {
+        String leReturn = "Erreur Création compte";
+        try (Connection cnx = connecterBDD();) {
+            String SQL = "INSERT INTO seance_cinema (idFilm,type,langue,idSalle,jour,horaire)"
+                    + "VALUES ('" + id_film + "','" + type + "', '" + langue + "', '" + idSalle + "', '" + jour + "', '" + Heure + "')";
+            try (Statement statement = cnx.createStatement();) {
+                try {
+                    statement.executeUpdate(SQL);
+                    leReturn = "Votre séance a été crée avec succés";
+                } catch (Exception e) {
+                    System.err.println("Exception ajout séance");
+                }
+            }
+        }
+        return leReturn;
+            }
+    
     public void ajoutReservationPlaces(int idReservation,int idPlace, int idTarif) throws SQLException{
         try (Connection cnx = connecterBDD();){
             String SQL = "INSERT INTO reservation_place(id_Reservation,id_Tarif,idPlace) "

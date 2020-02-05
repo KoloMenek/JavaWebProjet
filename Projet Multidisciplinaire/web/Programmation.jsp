@@ -9,9 +9,9 @@
 <!DOCTYPE html>
 <html>
     <%
-    HashMap<Integer, Film> lesFilms = (HashMap)request.getAttribute("lesFilms");
-    Integer nbFilms = (Integer)request.getAttribute("nbFilms");
-        %>
+        HashMap<Integer, Film> lesFilms = (HashMap) request.getAttribute("lesFilms");
+        Integer nbFilms = (Integer) request.getAttribute("nbFilms");
+    %>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -45,15 +45,31 @@
             </ul>
         </nav>
 
-        <form id="prog">
+        <form method = "POST"id="prog">
             <label id = "text1">Film : </label>
             <SELECT name="Film" size="1">
-                <%  for(int i=1; i<nbFilms+1;i++){
-                  String nom,img,desc;
-                  nom = lesFilms.get(i).getNomFilm();
-                %><OPTION value = "<%out.println(nom);%>"><%out.println(nom);%>
-          }%>
-                 
+                <%  for (int i = 1; i < nbFilms + 1; i++) {
+                        String nom, img, desc;
+                        nom = lesFilms.get(i).getNomFilm();%>
+                <OPTION value = "<% out.println(nom); %>">
+                    <% out.println(nom); %> 
+                </option>
+                <%}%>
+
+            </SELECT>
+                <label id = "text1">Type : </label>
+            <SELECT name="Type" size="1">
+                <OPTION value = "2D">2D
+                <OPTION value = "3D">3D
+                <OPTION value = "IMAX">IMAX
+                <OPTION value = "IMAX 3D">IMAX 3D
+                <OPTION value = "4DX">4DX
+            </SELECT>
+                <label id = "text1">Langue : </label>
+            <SELECT name="Langue" size="1">
+                <OPTION value = "VF">VF
+                <OPTION value = "VOSTFR">VOSTFR
+                <OPTION value = "VO">VO
             </SELECT>
             <label id = "text1">Jour : </label>
             <SELECT name="Jour" size="1">
@@ -61,14 +77,14 @@
                 <OPTION value = "6" >samedi
                 <OPTION value = "7" >dimanche
             </SELECT>
-            <label id = "text1">Heure : </label> <input type="time" name="wakeup"><br>
-              <label id = "text1">Salle : </label>
-                <SELECT name="Salle" size="1">
+            <label id = "text1">Heure : </label> <input value="18:00" type="time" name="Heure" required><br>
+            <label id = "text1">Salle : </label>
+            <SELECT name="Salle" size="1">
                 <OPTION value = "1">1 - Georges Brassens
                 <OPTION value = "2">2 - Jean-Dujardin
             </SELECT>
-              
-              <input type="submit" id="submit" value="Ajouter séance">
+
+            <input type="submit" action="ProgrammationServlet" id="submit" value="Ajouter séance">
         </form>
 
     </body>
