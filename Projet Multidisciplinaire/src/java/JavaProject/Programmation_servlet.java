@@ -63,7 +63,7 @@ public class Programmation_servlet extends HttpServlet {
         String SalleS = request.getParameter("Salle");
         String leReturn = "test";
         try {
-            DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
+            DateFormat dateFormat = new SimpleDateFormat("hh:mm");
             Date date1 = dateFormat.parse(HeureS);
             int FilmId = bdd.getIDFilm(Film);
             int Salle = Integer.parseInt(SalleS);
