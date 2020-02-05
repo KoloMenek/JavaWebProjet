@@ -36,14 +36,15 @@ public class Reservation_servlet extends HttpServlet {
         HttpSession session = request.getSession();
         JDBC bdd = new JDBC();
         Integer idClient = (Integer) session.getAttribute("idClient");
-        Integer idSeance = (Integer) session.getAttribute("idClient");
+        String idSeanceString =  (String) request.getParameter("idSeance");
+        int idSeance = Integer.parseInt(idSeanceString);
         Integer idTarif = (Integer) session.getAttribute("idTarif");
         int idReservation = -1;
         String[] lesChoix = (String[]) request.getParameterValues("Choix");
         int places = lesChoix.length;
         // a enlever
         idClient = 1;
-        idSeance = 1;
+        //idSeance = 1;
         idTarif = 1;
         
         try {

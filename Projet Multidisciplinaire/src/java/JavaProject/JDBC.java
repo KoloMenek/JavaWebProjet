@@ -139,10 +139,10 @@ public class JDBC {
     public ArrayList getSeancesForFilm(int idFilm, int jour) throws SQLException {
         ArrayList<Seance> lesSeances = new ArrayList<>();
         try (Connection cnx = connecterBDD();) {
-            String SQL = "SELECT horaire, type, langue, idSalle FROM seance_cinema WHERE idFilm = '" + idFilm + "' AND jour = '" + jour + "';";
+            String SQL = "SELECT horaire,IdSeance, type, langue, idSalle FROM seance_cinema WHERE idFilm = '" + idFilm + "' AND jour = '" + jour + "';";
             try (Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
                 while (rs.next()) {
-                    lesSeances.add(new Seance(rs.getInt("idSalle"), idFilm, rs.getString("type"), jour, rs.getTime("horaire"), rs.getString("langue")));
+                    lesSeances.add(new Seance(rs.getInt("idSalle"), idFilm, rs.getString("type"), jour, rs.getTime("horaire"), rs.getString("langue"),rs.getInt("IdSeance")));
                 }
 
             }
@@ -230,7 +230,7 @@ public class JDBC {
     public ArrayList<Historique> getHistorique() throws SQLException {
         ArrayList<Historique> histoClients = new ArrayList<>();
         int nbPlaces, idClient;
-        String pseudo;
+        String pseudo,nom,prenom;
         int idReservation = -1;
         String SQL;
         try (Connection cnx = connecterBDD();) {
@@ -244,10 +244,12 @@ public class JDBC {
                         nbPlaces = rs2.getInt("nbPlaces");
                         idClient = rs2.getInt("idClient");
                     }
-                    SQL = "SELECT pseudo from compte_client where idCompte = '" + idClient + "';";
+                    SQL = "SELECT pseudo,nom,prenom from compte_client where idCompte = '" + idClient + "';";
                     try (Statement statement3 = cnx.createStatement(); ResultSet rs3 = statement3.executeQuery(SQL);) {
                         rs3.next();
-                        pseudo = rs3.getString(1);
+                        nom = rs3.getString("nom");
+                        prenom = rs3.getString("prenom");
+                        pseudo = rs3.getString("pseudo");
                     }
                     histoClients.add(new Historique(pseudo,nbPlaces,idClient));
                 }

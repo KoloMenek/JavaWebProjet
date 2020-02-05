@@ -17,6 +17,7 @@ public class Historique {
     private int nbPlaces;
     private int idClient;
 
+
     public Historique(String pseudo, int nbPlaces, int idClient, String nom, String prenom) {
         this.pseudo = pseudo;
         this.nbPlaces = nbPlaces;
@@ -32,24 +33,23 @@ public class Historique {
     public void setIdClient(int idClient) {
         this.idClient = idClient;
     }
-    
+
     public String getNom() {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }   
-    
     public String getPrenom() {
         return prenom;
     }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
     public void setPrenom(String prenom) {
         this.prenom = prenom;
-    } 
+    }
     
-
     public Historique() {
     }
 

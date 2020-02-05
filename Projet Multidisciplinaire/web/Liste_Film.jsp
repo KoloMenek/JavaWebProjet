@@ -78,7 +78,7 @@
               <%
                   for(int j = 0; j < lesSeancesVendredi.get(i).size() ;j++){
               %>
-              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesVendredi.get(i).get(j).getHoraire().toString()); %></a>
+              <a href="reservation.jsp?idSeance=<%out.print(lesSeancesVendredi.get(i).get(j).getIdSeance());%>" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesVendredi.get(i).get(j).getHoraire().toString()); %></a>
               <%
                   }
               %>
@@ -87,7 +87,7 @@
               <%
                   for(int j = 0; j < lesSeancesSamedi.get(i).size() ;j++){
               %>
-              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesSamedi.get(i).get(j).getHoraire().toString()); %></a>
+              <a href="reservation.jsp?idSeance=<%out.print(lesSeancesSamedi.get(i).get(j).getIdSeance());%>" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesSamedi.get(i).get(j).getHoraire().toString()); %></a>
               <%
                   }
               %>
@@ -96,7 +96,7 @@
               <%
                   for(int j = 0; j < lesSeancesDimanche.get(i).size() ;j++){
               %>
-              <a href="reservation.jsp" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesDimanche.get(i).get(j).getHoraire().toString()); %></a>
+              <a href="reservation.jsp?idSeance=<%out.print(lesSeancesDimanche.get(i).get(j).getIdSeance());%>" class="button4" style="background-color:#f14e4e"><% out.println(lesSeancesDimanche.get(i).get(j).getHoraire().toString()); %></a>
               <%
                   }
               %>
