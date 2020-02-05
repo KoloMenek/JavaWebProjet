@@ -31,6 +31,10 @@
         <servlet-name>RecetteServlet</servlet-name>
         <servlet-class>JavaProject.RecetteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HistoriqueServlet</servlet-name>
+        <servlet-class>JavaProject.HistoriqueServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
@@ -58,6 +62,10 @@
     <servlet-mapping>
         <servlet-name>RecetteServlet</servlet-name>
         <url-pattern>/RecetteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HistoriqueServlet</servlet-name>
+        <url-pattern>/HistoriqueServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

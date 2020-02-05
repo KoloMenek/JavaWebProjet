@@ -107,6 +107,17 @@ public class JDBC {
         }
         return count;
     }
+    public int getNumberOfReservation() throws SQLException {
+        int count = 0;
+        try(Connection cnx = connecterBDD();){
+            String SQL = "SELECT COUNT(*) FROM Reservation;";
+            try(Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL);) {
+                rs.next();
+                count = rs.getInt(1);
+            }
+        }
+        return count;
+    }
     
     public Film getElementsFromFilm(int idFilm) throws SQLException{
         Film leFilm = new Film();
@@ -136,11 +147,11 @@ public class JDBC {
         return lesSeances;
     }
     
-    public int ajoutReservation(int idClient, int idSeance) throws SQLException{
+    public int ajoutReservation(int idClient, int idSeance, int nbPlaces) throws SQLException{
         int leRetour = -1;
         try (Connection cnx = connecterBDD();){
-            String SQL = "INSERT INTO reservation (idSeance,idClient) "
-                       + "VALUES ('" + idSeance + "','" + idClient + "')";
+            String SQL = "INSERT INTO reservation (idSeance,idClient,nbPlaces) "
+                       + "VALUES ('" + idSeance + "','" + idClient + "','" + nbPlaces + "')";
             try(PreparedStatement statement = cnx.prepareStatement(SQL,Statement.RETURN_GENERATED_KEYS);){
                 
                     int affectedRows = statement.executeUpdate();
@@ -210,5 +221,32 @@ public class JDBC {
             }
         }
         return recette;
+    }
+    public Historique getHistorique() throws SQLException{
+        Historique historique = new Historique();
+        int idReservation = -1;
+        String SQL;
+        try (Connection cnx = connecterBDD();) {
+            SQL = "Select idReservation from reservation";
+  
+            try(Statement statement = cnx.createStatement(); ResultSet rs = statement.executeQuery(SQL)){
+                while(rs.next()){
+                idReservation = rs.getInt("idReservation");
+                SQL = "SELECT nbPlaces, idClient from reservation where idReservation = '" + idReservation + "';";
+                try (Statement statement2 = cnx.createStatement(); ResultSet rs2 = statement.executeQuery(SQL);) {
+                    rs2.next();
+                    historique.setNbPlaces(rs2.getInt("nbPlaces"));
+                    historique.setIdClient(rs2.getInt("idClient"));
+                }
+                SQL = "SELECT pseudo from compte_client where idCompte = '" + historique.getIdClient() + "';";
+                try (Statement statement3 = cnx.createStatement(); ResultSet rs3 = statement.executeQuery(SQL);) {
+                    rs3.next();
+                    historique.setPseudo(rs3.getString(1));
+                }
+            
+            }
+            }
+            }
+        return historique;
     }
 }

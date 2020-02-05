@@ -35,8 +35,7 @@
   <center><table border="0" style="margin: auto; width: 80%">
         <thead style="background-color: grey; color: white; ">
           <tr>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <th scope="col">Pseudo</th>
             <th scope="col">Nombre de place</th>
           </tr>
         </thead>
@@ -46,16 +45,7 @@
             <td>Otto</td>
             <td>1</td>
           </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5</td>
-          </tr>
+          
         </tbody>
       </table></center>
     </body>

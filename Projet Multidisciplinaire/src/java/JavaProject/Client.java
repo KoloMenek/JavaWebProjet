@@ -18,6 +18,9 @@ public class Client {
     private String nom,prenom;
     private Date naissance;
 
+    public Client() {
+    }
+
     public Client(Integer idClient, String nom, String prenom, Date naissance) {
         this.idClient = idClient;
         this.nom = nom;

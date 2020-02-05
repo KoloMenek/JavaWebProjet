@@ -40,12 +40,14 @@ public class Reservation_servlet extends HttpServlet {
         Integer idTarif = (Integer) session.getAttribute("idTarif");
         int idReservation = -1;
         String[] lesChoix = (String[]) request.getParameterValues("Choix");
+        int places = lesChoix.length;
         // a enlever
         idClient = 1;
         idSeance = 1;
         idTarif = 1;
+        
         try {
-               idReservation = bdd.ajoutReservation(idClient,idSeance);
+               idReservation = bdd.ajoutReservation(idClient,idSeance,places);
             } catch (SQLException ex) {
                 Logger.getLogger(Reservation_servlet.class.getName()).log(Level.SEVERE, null, ex);
             }
